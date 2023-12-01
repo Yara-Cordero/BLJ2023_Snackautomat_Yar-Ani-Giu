@@ -1,5 +1,7 @@
 package Snackautomat;
 
+import java.util.Scanner;
+
 public class Machine {
 
     private float money;
@@ -14,7 +16,18 @@ public class Machine {
 
 
     private void start() {
-        
+       boolean error = true;
+
+       do{
+           try{
+               System.out.println("How much money do you have on you?");
+               money
+
+           }catch (Exception e){
+               System.out.println("Enter valid input");
+           }
+
+       }while(error);
     }
 
 }
