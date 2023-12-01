@@ -4,7 +4,6 @@ public class Money {
 
     private float price;
     private String nameOfTheProduct;
-
     private String productnumber;
     private int amount;
 

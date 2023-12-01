@@ -4,14 +4,16 @@ public class Item {
 
     private float price;
     private String nameOfTheProduct;
-    private final int productnumber;    //These are the fix product numbers
-    private int amout;
+    private final int productNumber;    //These are the fix product numbers
+    private int amount;
+    private boolean isDrink;
 
-    public Item(float price, String nameOfTheProduct, int productnumber, int amout) {
+    public Item(float price, String nameOfTheProduct, int productNumber, int amount, boolean isDrink) {
         this.price = price;
         this.nameOfTheProduct = nameOfTheProduct;
-        this.productnumber = productnumber;
-        this.amout = amout;
+        this.productNumber = productNumber;
+        this.amount = amount;
+        this.isDrink = isDrink;
     }
 
     public float getPrice() {
@@ -30,15 +32,23 @@ public class Item {
         this.nameOfTheProduct = nameOfTheProduct;
     }
 
-    public int getProductnumber() {
-        return productnumber;
+    public int getProductNumber() {
+        return productNumber;
     }
 
-    public int getAmout() {
-        return amout;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setAmout(int amout) {
-        this.amout = amout;
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public boolean isDrink() {
+        return isDrink;
+    }
+
+    public void setDrink(boolean drink) {
+        isDrink = drink;
     }
 }
