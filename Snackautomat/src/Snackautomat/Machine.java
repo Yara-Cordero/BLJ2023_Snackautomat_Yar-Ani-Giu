@@ -12,4 +12,9 @@ public class Machine {
     Item twix = new Item(2.90, "Twix", "B1", 32, false);
     Item paprikaChips = new Item(4.20, "Paprika Chips", "B2", 43, false);
 
+
+    private void start() {
+        
+    }
+
 }
