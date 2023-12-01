@@ -4,7 +4,7 @@ public class Item {
 
     private double price;
     private String nameOfTheProduct;
-    private final String productNumber;    //These are the fix product numbers
+    private String productNumber;    //These are the fix product numbers
     private int amount;
     private boolean isDrink;
 
