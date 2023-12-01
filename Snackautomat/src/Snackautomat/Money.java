@@ -2,23 +2,23 @@ package Snackautomat;
 
 public class Money {
 
-    private float price;
+    private double price;
     private String nameOfTheProduct;
     private String productnumber;
     private int amount;
 
-    public Money(float price, String nameOfTheProduct, String productnumber, int amount) {
+    public Money(double price, String nameOfTheProduct, String productnumber, int amount) {
         this.price = price;
         this.nameOfTheProduct = nameOfTheProduct;
         this.productnumber = productnumber;
         this.amount = amount;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

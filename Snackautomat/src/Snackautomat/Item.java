@@ -2,13 +2,13 @@ package Snackautomat;
 
 public class Item {
 
-    private float price;
+    private double price;
     private String nameOfTheProduct;
-    private final int productNumber;    //These are the fix product numbers
+    private final String productNumber;    //These are the fix product numbers
     private int amount;
     private boolean isDrink;
 
-    public Item(float price, String nameOfTheProduct, int productNumber, int amount, boolean isDrink) {
+    public Item(double price, String nameOfTheProduct, String productNumber, int amount, boolean isDrink) {
         this.price = price;
         this.nameOfTheProduct = nameOfTheProduct;
         this.productNumber = productNumber;
@@ -16,11 +16,11 @@ public class Item {
         this.isDrink = isDrink;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -32,7 +32,7 @@ public class Item {
         this.nameOfTheProduct = nameOfTheProduct;
     }
 
-    public int getProductNumber() {
+    public String getProductNumber() {
         return productNumber;
     }
 
