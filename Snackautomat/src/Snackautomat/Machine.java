@@ -30,7 +30,7 @@ public class Machine {
     Item extra3 = new Item(3.0,"Papes",22,false);
     Item extra4 = new Item(14.0,"Vape", 16,false);
 
-<<<<<<< Updated upstream
+
     public Machine(float money) {
         this.money = money;
     }
@@ -40,9 +40,9 @@ public class Machine {
     private static final String green ="\u001B[32m";
     private static final String reset = "\u001B[0m";
 
-=======
+
     Scanner scan = new Scanner(System.in);
->>>>>>> Stashed changes
+
     private void start() {
        int repeat = 1;
        boolean error = true;
@@ -104,8 +104,6 @@ public class Machine {
         return secretKey;
     }
 
-<<<<<<< Updated upstream
-=======
     private void moneyStatus() {
         System.out.println("                                                                                                                #################\n" +
                 "                                                                                                                #               #\n" +
