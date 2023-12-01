@@ -35,7 +35,7 @@ public class Machine {
        do{
            try{
                System.out.println("How much money do you have on you?");
-               
+
 
            }catch (Exception e){
                System.out.println("Enter valid input");
