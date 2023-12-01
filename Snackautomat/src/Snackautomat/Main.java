@@ -22,6 +22,10 @@ public class Main {
     public static void main(String[] args) {
         printLogo();
 
+        Machine myVending = new Machine(5 );
+
+        myVending.printMachine();
+
 
     }
 
