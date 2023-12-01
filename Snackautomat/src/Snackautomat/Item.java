@@ -16,6 +16,15 @@ public class Item {
         this.isDrink = isDrink;
     }
 
+    public Item(double price, String nameOfTheProduct, int amount, boolean isDrink) {
+        this.price = price;
+        this.nameOfTheProduct = nameOfTheProduct;
+        this.amount = amount;
+        this.isDrink = isDrink;
+    }
+
+
+
     public double getPrice() {
         return price;
     }
@@ -51,4 +60,7 @@ public class Item {
     public void setDrink(boolean drink) {
         isDrink = drink;
     }
+
+
 }
+
