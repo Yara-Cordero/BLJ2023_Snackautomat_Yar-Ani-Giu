@@ -22,10 +22,16 @@ public class Main {
     public static void main(String[] args) {
         printLogo();
 
+<<<<<<< Updated upstream
         Machine myVending = new Machine(5 );
 
         myVending.printMachine();
 
+=======
+        Machine myVending = new Machine();
+
+        myVending.p
+>>>>>>> Stashed changes
 
     }
 
