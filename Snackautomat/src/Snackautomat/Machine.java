@@ -4,9 +4,28 @@ import java.util.Scanner;
 
 public class Machine {
 
-    private float money;
+    private static float money;
     private final String secretKey = "secret Key";
+    public final static void clearConsole()
+    {
+        try
+        {
+            final String os = System.getProperty("os.name");
 
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+            //  Handle any exceptions.
+        }
+    }
     private String[][] vendigItems = new String[4][4];
 
     Item maltesers = new Item(3.50, "Maltesers", "A1", 10, false);
@@ -46,6 +65,7 @@ public class Machine {
     private void start() {
        int repeat = 1;
        boolean error = true;
+       printMachine();
 
        do{
            try{
@@ -62,10 +82,19 @@ public class Machine {
        setMoney(money);
 
        do {
-           try {
+           printMachine();
 
-           }catch (Exception e){
+           String inputItemPos = scan.nextLine().toLowerCase();
+           error = true;
+           if (secretKey.equals(inputItemPos)) {
+               //secret key function (
+           } else if (inputItemPos.startsWith("a") || inputItemPos.startsWith("b") || inputItemPos.startsWith("c") ||inputItemPos.startsWith("d") ) {
+               if (inputItemPos.endsWith("1") || inputItemPos.endsWith("2") || inputItemPos.startsWith("3") || inputItemPos.endsWith("4" )) {
 
+                   error = false;
+               }
+           } else {
+               System.out.println("Enter a correct number");
            }
 
        }while (error);
@@ -73,13 +102,15 @@ public class Machine {
     }
 
 
-    void printMachine() {
-        System.out.println( //give clear screen 
+    static void printMachine() {
+        clearConsole();
+        String formattedMoney = String.format("%.2f", money);
+        System.out.println( //give clear screen
                         "\n                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
                         "                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
                         "                 ###################                    ░██████████████████████████████████████████████████████████████░                                                        \n" +
                         "                 ##               ##                    ░█████▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒███████████████░                                                        \n" +
-                        "                 ##    $ " + money +"      ##                    ░█████▒                                        ░████▓▒█████████░                                                        \n" +
+                        "                 ##    $ " + formattedMoney +"     ##                    ░█████▒                                        ░████▓▒█████████░                                                        \n" +
                         "                 ##               ##                    ░█████▒    " +red + "▒▓▓▓   "+yellow+  "  ▓▓▓  "+red+   "    ░▓▓▓▓  "+yellow+   "   ▓▓▓▓" + reset +"    ░███████████████░                                                        \n" +
                         "                 ###################                    ░█████▒   "+red+ " ▓▓▓▓▒    "+yellow+ "███▓  "+red+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░███████████████░                                                        \n" +
                         "                                                        ░█████▒   "+red+ " █▓██▓ "+yellow+   "  ▓███▓ "+red+   "    ▒████ "+yellow+   "   ░████░ "+reset+  "  ░████▓▓█████████░                                                        \n" +
@@ -109,6 +140,48 @@ public class Machine {
                         "                                                           ▓█▓▓▓▓▓▓█▒                                      ▒█▓▓▓▓▓▓█▓                                                           ");
 
         }
+
+    void printMachineWithPrice(Item item) {
+        clearConsole();
+        String formattedMoney = String.format("%.2f", money);
+        String itemPrice = String.format("%.2f", item.getPrice());
+        System.out.println(
+                "\n                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
+                        "                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
+                        "                 ###################                    ░██████████████████████████████████████████████████████████████░                                                        \n" +
+                        "                 ##               ##                    ░█████▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒███████████████░                                                        \n" +
+                        "                 ##    $ " + formattedMoney +"     ##                    ░█████▒                                        ░████▓▒█████████░                                                        \n" +
+                        "                 ##               ##                    ░█████▒    " +red + "▒▓▓▓   "+yellow+  "  ▓▓▓  "+red+   "    ░▓▓▓▓  "+yellow+   "   ▓▓▓▓" + reset +"    ░███████████████░                                                        \n" +
+                        "                 ###################                    ░█████▒   "+red+ " ▓▓▓▓▒    "+yellow+ "███▓  "+red+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░███████████████░                                                        \n" +
+                        "                                                        ░█████▒   "+red+ " █▓██▓ "+yellow+   "  ▓███▓ "+red+   "    ▒████ "+yellow+   "   ░████░ "+reset+  "  ░████▓▓█████████░                                                        \n" +
+                        "                                                        ░█████▓▒▒▒▒ A1 ▒▒▒▒▒ A2 ▒▒▒▒▒ A3 ▒▒▒▒▒▒ A4 ▒▒▒▒▒██           ▓█░                                                        \n" +
+                        "                                                        ░█████▒                                        ░██   " + itemPrice + "     ▓█░                                                        \n" +
+                        "                                                        ░█████▒   "+green+  "  ░░░  "+yellow+    "    ░░░  "+green+    "    ░░░  "+yellow+    "    ░░░  "+reset+   "   ░██           ▓█░                                                        \n" +
+                        "                                                        ░█████▒   "+green+ " ████▓  "+yellow+  "  ▓███▓ "+green+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░██           ▓█░                                                        \n" +
+                        "                                                        ░█████▒   "+green+ " ████▓ "+yellow+  "   ▒███▓ "+green+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░████▓▒█████████░                                                        \n" +
+                        "                                                        ░█████▓▒▒▒▒ B1 ▒▒▒▒▒ B2 ▒▒▒▒▒ B3 ▒▒▒▒▒▒ B4 ▒▒▒▒▒████▓▒█████████░                                                        \n" +
+                        "                                                        ░█████▒                                        ░███▓1▒▓2▓▒3▓███░                                                        \n" +
+                        "                                                        ░█████▒    ▓███▓    ▒███▓    ░████    ░████░   ░███▓4▒▓5▓▒6▓███░                                                        \n" +
+                        "                                                        ░█████▒    ████▓    ▒███▓    ▒████    ░████░   ░███▓7▒▓8▓▒9████░                                                        \n" +
+                        "                                                        ░█████▒    ████▓    ▒███▓    ▒████    ░████░   ░██████▒#▒██████░                                                        \n" +
+                        "                                                        ░█████▒▒▒▒▒ C1 ▒▒▒▒▒ C2 ▒▒▒▒▒▒ C3 ▒▒▒▒▒ C4 ▒▒▒▒░███████████████░                                                        \n" +
+                        "                                                        ░█████▒     ▒▒▒      ▒▒▒      ▒▒▒      ▒▒▒▒    ░███████████████░                                                        \n" +
+                        "                                                        ░█████▒    ████▓    ▓███▓    ▒████    ░████░   ░███▒▒▓▒████████░                                                        \n" +
+                        "                                                        ░█████▒    ████▓    ▓███▓    ▒████    ░████░   ░████▓▒█████████░                                                        \n" +
+                        "                                                        ░█████▒▒▒▒▒ D1 ▒▒▒▒▒ D2 ▒▒▒▒▒▒ D3 ▒▒▒▒▒ D4 ▒▒▒▒░███████████████░                                                        \n" +
+                        "                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
+                        "                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
+                        "                                                        ░█████▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒░███████████████░                                                        \n" +
+                        "                                                        ░█████▒░██████████████████████████████████████▓░███████████████░                                                        \n" +
+                        "                                                        ░██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓███████████████░                                                        \n" +
+                        "                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
+                        "                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
+                        "                                                         ░░█▒░  ░ ░█▒                                     ▒█░ ░   ▒█░░                                                         \n" +
+                        "                                                           ▓█▓▓▓▓▓▓█▒                                      ▒█▓▓▓▓▓▓█▓                                                           ");
+
+    }
+
+
 
     public String getSecretKey() {
         return secretKey;
