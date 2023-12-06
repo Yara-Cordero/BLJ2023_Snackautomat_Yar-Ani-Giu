@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Machine {
 
-    private static float money;
+    private double money;
     private final String secretKey = "secret Key";
     public final static void clearConsole()
     {
@@ -50,7 +50,7 @@ public class Machine {
     Item extra4 = new Item(14.0,"Vape", 16,false);
 
 
-    public Machine(float money) {
+    public Machine(double money) {
         this.money = money;
     }
 
@@ -88,17 +88,84 @@ public class Machine {
            error = true;
            if (secretKey.equals(inputItemPos)) {
                //secret key function (
-           } else if (inputItemPos.startsWith("a") || inputItemPos.startsWith("b") || inputItemPos.startsWith("c") ||inputItemPos.startsWith("d") ) {
-               if (inputItemPos.endsWith("1") || inputItemPos.endsWith("2") || inputItemPos.startsWith("3") || inputItemPos.endsWith("4" )) {
+           }else {
+               switch (inputItemPos){
+                   case "a1":{
 
-                   error = false;
+                   }case "a2":{
+
+                   }case "a3":{
+
+                   }case "a4":{
+
+                   }case "b1":{
+
+                   }case "b2":{
+
+                   }case "b3":{
+
+                   }case "b4":{
+
+                   }case "c1":{
+
+                   }case "c2":{
+
+                   }case "c3":{
+
+                   }case "c4":{
+
+                   }case "d1":{
+
+                   }case "d2":{
+
+                   }case "d3":{
+
+                   }case "d4":{
+
+                   } default:{
+                       System.out.println("Enter a valid Input");
+                   }
+
                }
-           } else {
-               System.out.println("Enter a correct number");
+
            }
+
 
        }while (error);
 
+    }
+
+    private void purchaseItem(Item item, float money){
+        this.money = money;
+        String inputChoice;
+        boolean error = true;
+
+
+        System.out.println("You selected " + item.getNameOfTheProduct() + "\n\n");
+        printMachineWithPrice(item);
+
+        do {
+            System.out.println("What do you want to do?");
+            System.out.println("1. Buy\n2. Cancel");
+            inputChoice = scan.nextLine().toLowerCase();
+            if (inputChoice.equals("1") || inputChoice.equals("1.") || inputChoice.equals("buy")) {
+                error = false;
+
+                if (item.getPrice() > money) {
+                    System.out.println("You don't have enough money to buy this item!");
+                } else {
+                    item.setAmount(item.getAmount() - 1);
+                    setMoney((getMoney() - item.getPrice()));
+                    System.out.println(item.getNameOfTheProduct() + " WAS PURCHASED!!");
+                    printMachine();
+                }
+            } else if (inputChoice.equals("2") || inputChoice.equals("2.") || inputChoice.equals("cancel")) {
+                error = false;
+                break;
+            }else {
+                System.out.println("Enter a valid Input");
+            }
+        }while (error);
     }
 
 
@@ -187,10 +254,10 @@ public class Machine {
         return secretKey;
     }
 
-    public float getMoney() {
+    public double getMoney() {
         return money;
     }
-    public void setMoney(float money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 }
