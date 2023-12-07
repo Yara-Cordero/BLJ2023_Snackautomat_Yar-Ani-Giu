@@ -16,6 +16,10 @@ public class Item {
         this.isDrink = isDrink;
     }
 
+    public Item(String productNumber) {
+        this.productNumber = productNumber;
+    }
+
     public Item(double price, String nameOfTheProduct, int amount, boolean isDrink) {
         this.price = price;
         this.nameOfTheProduct = nameOfTheProduct;

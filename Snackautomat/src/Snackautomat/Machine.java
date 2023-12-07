@@ -246,29 +246,46 @@ public class Machine {
 
     }
 
-    private void changePrice() {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Item> vendigItems = new ArrayList<>();
+    private void changePrice(Item item) {
+        boolean error = true;
 
-        System.out.println("Enter the name of the item you want to change the price of:");
-        String itemNameOfTheProduct = scanner.nextLine();
-        System.out.println("Enter the new price");
-        double newPrice = scanner.nextDouble();
-        scanner.nextLine();    //consume new line left-over
+        do {
+            System.out.println("Enter the product number for the item whose price you want to change:");
+            String inputProductNumber = scan.nextLine().toLowerCase();
 
+            String itemProductNumber = item.getProductNumber(); // Accessing product number using the Item object
+
+            if(inputProductNumber.equals(itemProductNumber)) {
+                // Product number matches, proceed to change the price
+                System.out.println("Enter the new price for the item:");
+                double newPrice = scan.nextDouble();
+                scan.nextLine(); // Consume the newline character after reading the double
+
+                item.setPrice(newPrice); // Assuming setPrice() method exists in the Item class to change the price
+                error = false; // Set error to false to exit the loop
+            } else {
+                System.out.println("Product number does not match. Please try again.");
+            }
+        } while (error);
+    }
+
+
+        /*
         boolean found = false;
         for (Item item : vendigItems) {
-            if (item.getNameOfTheProduct().toLowerCase().equals(itemNameOfTheProduct)) {
+            if (item.getProductNumber().toLowerCase().equals(itemProductNumber)) {
                 item.setPrice(newPrice);
                 found = true;
-                System.out.println("The price of " + item.getNameOfTheProduct() + " has been updated to " + newPrice);
+                System.out.println("The price of " + item.getProductNumber() + " has been updated to " + newPrice);
                 break;
             }
         }
         if (!found) {
             System.out.println("Item not found in the vending machine.");
         }
-    }
+        */
+
+
 
     public void replaceItem() {
         Scanner in = new Scanner(System.in);
@@ -395,6 +412,7 @@ public class Machine {
     public void setMoney(double money) {
         this.money = money;
     }
+
 }
 
 
