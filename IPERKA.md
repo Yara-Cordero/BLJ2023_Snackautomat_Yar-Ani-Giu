@@ -90,7 +90,7 @@ Wir erstellten unsere verschieden Files.
   - String nameOfTheProduct
   - int amount
 
-Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser auch deine Geld Summe und den Preis und Name eines Gegenstandes printed. Wir färbten auch die verschiedenen Items ein um das Aussehen des Automates zu verschönern.
+Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser auch eine Geld Summe und den Preis und Name eines Gegenstandes printed. Wir färbten auch die verschiedenen Items ein um das Aussehen des Automates zu verschönern.
 # Kontrollieren
 
 # Auswerten
