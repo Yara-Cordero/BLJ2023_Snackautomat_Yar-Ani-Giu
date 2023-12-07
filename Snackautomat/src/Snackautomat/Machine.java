@@ -207,7 +207,7 @@ public class Machine {
         }while (error);
     }
 
-    /*
+
     public void secretKeyFunction() {
         Scanner scanner = new Scanner(System.in);
         boolean error = true;
@@ -246,32 +246,18 @@ public class Machine {
             }
         }while(repeat);
 
-    }*/
+    }
 
-    /*
+
     private void changePrice(Item item) {
-        boolean error;
 
-        do {
-            error = true;
-            System.out.println("Enter the product number for the item whose price you want to change:");
-            String inputProductNumber = scan.nextLine().toLowerCase();
+        System.out.println("What do you want to change the price to?");
+        double newPrice = scan.nextDouble();
 
-            String itemProductNumber = item.getProductNumber(); // Accessing product number using the Item object
+        item.setPrice(newPrice);
 
-            if(inputProductNumber.equals(itemProductNumber)) {
-                // Product number matches, proceed to change the price
-                System.out.println("Enter the new price for the item:");
-                double newPrice = scan.nextDouble();
-                scan.nextLine(); // Consume the newline character after reading the double
-
-                item.setPrice(newPrice); // Assuming setPrice() method exists in the Item class to change the price
-                error = false; // Set error to false for exit the loop
-            } else {
-                System.out.println("Product number does not match. Please try again.");
-            }
-        } while (error);
-    }*/
+        System.out.println("The new Price is" + item.getPrice());
+    }
 
 
     public void replaceItem() {
