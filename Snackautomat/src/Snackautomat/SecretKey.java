@@ -1,8 +1,12 @@
 package Snackautomat;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class SecretKey {
+
+    private static final String yellow = "\u001B[33m";
+    private static final String reset = "\u001B[0m";
     /**
      *  }else {
      *                switch (inputItemPos){
@@ -67,24 +71,4 @@ public class SecretKey {
 
     }
 
-    private void changePrice(){
-        System.out.println("Enter the name of the item you want to change the price of:");
-        String itemName = scan.nextLine();
-        System.out.println("Enter the new price");
-        double newPrice = scan.nextDouble();
-        scan.nextLine();    //consume new line left-over
-
-        boolean found = false;
-        for(String[] item : vendigItems){
-            if(item[0].toLowerCase().equals(itemName)){
-                item[1] = Double.toString(newPrice);
-                found = true;
-                System.out.println("The price of " + item[0] + " has been updated to " + newPrice);
-                break;
-            }
-        }
-        if (!found){
-            System.out.println("Item not found in the vending machine.");
-        }
-    }
 }

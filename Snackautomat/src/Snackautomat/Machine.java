@@ -1,6 +1,7 @@
 package Snackautomat;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Machine {
@@ -93,7 +94,7 @@ public class Machine {
            scan.nextLine();
            error = true;
            if (secretKey.equals(inputItemPos)) {
-               secretKey();
+                secretKeyFunction();
            }else {
                switch (inputItemPos){
                    case "a1":{
@@ -205,7 +206,8 @@ public class Machine {
         }while (error);
     }
 
-    private void secretKey() {
+    public void secretKeyFunction() {
+        Scanner scanner = new Scanner(System.in);
         boolean error = true;
         boolean repeat = true;
 
@@ -216,11 +218,11 @@ public class Machine {
                 System.out.println("What do you want to do?");
                 System.out.println("1. Restock item\n2. Change Price\n3. Replace item\n4. Cancel");
 
-                String inputSecretKeyChoice = scan.nextLine().toLowerCase();
+                String inputSecretKeyChoice = scanner.nextLine().toLowerCase();
 
                 if (inputSecretKeyChoice.equals("1") || inputSecretKeyChoice.equals("1.") || inputSecretKeyChoice.equals("restock item")) {
                     error = false;
-                  //  restockItem();
+                    //  restockItem();
                 } else if (inputSecretKeyChoice.equals("2") || inputSecretKeyChoice.equals("2.") || inputSecretKeyChoice.equals("change price")) {
                     error = false;
                     changePrice();
@@ -235,7 +237,7 @@ public class Machine {
             } while (error);
 
             System.out.println("Do you want to make more changes? (Y/N)");
-            char inputRepeat = scan.next().charAt(0);
+            char inputRepeat = scanner.next().charAt(0);
 
             if(inputRepeat == 'n' || inputRepeat == 'N'){
                 repeat = false;
@@ -243,6 +245,41 @@ public class Machine {
         }while(repeat);
 
     }
+
+    private void changePrice() {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Item> vendigItems = new ArrayList<>();
+
+        System.out.println("Enter the name of the item you want to change the price of:");
+        String itemNameOfTheProduct = scanner.nextLine();
+        System.out.println("Enter the new price");
+        double newPrice = scanner.nextDouble();
+        scanner.nextLine();    //consume new line left-over
+
+        boolean found = false;
+        for (Item item : vendigItems) {
+            if (item.getNameOfTheProduct().toLowerCase().equals(itemNameOfTheProduct)) {
+                item.setPrice(newPrice);
+                found = true;
+                System.out.println("The price of " + item.getNameOfTheProduct() + " has been updated to " + newPrice);
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Item not found in the vending machine.");
+        }
+    }
+
+    public void replaceItem() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Which item do you want to replace?");
+        String itemPos = in.nextLine();
+
+
+
+    }
+
+
 
 
 
