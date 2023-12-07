@@ -89,7 +89,8 @@ public class Machine {
        do {
            printMachine();
 
-           String inputItemPos = scan.nextLine().toLowerCase(); //have to enter twice
+           String inputItemPos = scan.nextLine().toLowerCase();  //have to enter twice
+           scan.nextLine();
            error = true;
            if (secretKey.equals(inputItemPos)) {
                secretKey();
@@ -183,6 +184,7 @@ public class Machine {
             System.out.println("What do you want to do?");
             System.out.println("1. Buy\n2. Cancel");
             inputChoice = scan.nextLine().toLowerCase();
+            scan.nextLine();
             if (inputChoice.equals("1") || inputChoice.equals("1.") || inputChoice.equals("buy")) {
                 error = false;
 
@@ -204,7 +206,8 @@ public class Machine {
     }
 
     private void secretKey() {
-        boolean error, repeat = true;
+        boolean error = true;
+        boolean repeat = true;
 
 
         do {
@@ -217,13 +220,13 @@ public class Machine {
 
                 if (inputSecretKeyChoice.equals("1") || inputSecretKeyChoice.equals("1.") || inputSecretKeyChoice.equals("restock item")) {
                     error = false;
-                    restockItem();
+                  //  restockItem();
                 } else if (inputSecretKeyChoice.equals("2") || inputSecretKeyChoice.equals("2.") || inputSecretKeyChoice.equals("change price")) {
                     error = false;
                     changePrice();
                 } else if (inputSecretKeyChoice.equals("3") || inputSecretKeyChoice.equals("3.") || inputSecretKeyChoice.equals("replace item")) {
                     error = false;
-                    replaceItem();
+                    //replaceItem();
                 } else if (inputSecretKeyChoice.equals("4") || inputSecretKeyChoice.equals("4.") || inputSecretKeyChoice.equals("cancel")) {
                     error = false;
                 } else {
@@ -240,26 +243,7 @@ public class Machine {
         }while(repeat);
 
     }
-    private void changePrice(){
-        System.out.println("Enter the name of the item you want to change the price of:");
-        String itemName = scan.nextLine();
-        System.out.println("Enter the new price");
-        double newPrice = scan.nextDouble();
-        scan.nextLine();    //consume new line left-over
 
-        boolean found = false;
-        for(String[] item : vendigItems){
-            if(item[0].toLowerCase().equals(itemName)){
-                item[1] = Double.toString(newPrice);
-                found = true;
-                System.out.println("The price of " + item[0] + " has been updated to " + newPrice);
-                break;
-            }
-        }
-        if (!found){
-            System.out.println("Item not found in the vending machine.");
-        }
-    }
 
 
     void printMachine() {
