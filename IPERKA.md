@@ -22,7 +22,7 @@ Hier ist das verbessetrte Activity Diagramm. Es macht nur Sinn das der User entw
 
 
 
-Wir haben uns hier eine Liste erstellt wo jedes Gruppenmitglied abhacken kann, was in dem File Machine schon erledigt ist, so dass alle aus der Gruppe auf dem neusten Stand sind, weil alle Mitglieder mehrheitlich in diesem File arbeiten müssen.
+Wir haben uns hier eine Liste erstellt wo jedes Gruppenmitglied abhacken kann, was im File Machine schon erledigt ist, so dass alle aus der Gruppe auf dem neusten Stand sind, da alle Mitglieder mehrheitlich in diesem File arbeiten müssen.
 
 <img width="600" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/6ba2a7ee-5393-4f65-8eca-aa46b0b74631">
 
