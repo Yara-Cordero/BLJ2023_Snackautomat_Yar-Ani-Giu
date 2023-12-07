@@ -28,7 +28,7 @@ public class Machine {
     }
     private String[][] vendigItems = new String[4][4];
 
-    Item maltesers = new Item(3.50, "Maltesers", "A1", 10, false);
+    Item maltesers = new Item(3.50, "Malteser", "A1", 10, false);
     Item mms = new Item(2.50, "M&M", "A2", 20,false);
     Item snickers = new Item(3.0, "Snickers", "A3", 15, false);
     Item twix = new Item(2.90, "Twix", "A4", 32, false);
@@ -50,6 +50,9 @@ public class Machine {
     Item extra4 = new Item(14.0,"Vape", 16,false);
 
 
+    public Machine() {
+    }
+
     public Machine(double money) {
         this.money = money;
     }
@@ -62,15 +65,16 @@ public class Machine {
 
     Scanner scan = new Scanner(System.in);
 
-    private void start() {
-       int repeat = 1;
+    void start() {
+       char decisionRepeat = 'y';
        boolean error = true;
        printMachine();
 
        do{
            try{
                System.out.println("How much money do you have on you?");
-               money = scan.nextFloat();
+               money = scan.nextDouble();
+               scan.nextLine();
                error = false;
 
            }catch (Exception e){
@@ -85,43 +89,60 @@ public class Machine {
            printMachine();
 
            String inputItemPos = scan.nextLine().toLowerCase();
+           scan.nextLine();
            error = true;
            if (secretKey.equals(inputItemPos)) {
                //secret key function (
            }else {
                switch (inputItemPos){
                    case "a1":{
-
+                       purchaseItem(maltesers, getMoney());
+                       break;
                    }case "a2":{
-
+                       purchaseItem(mms, getMoney());
+                       break;
                    }case "a3":{
-
+                       purchaseItem(snickers, getMoney());
+                       break;
                    }case "a4":{
-
+                       purchaseItem(twix, getMoney());
+                       break;
                    }case "b1":{
-
+                       purchaseItem(paprikaChips, getMoney());
+                       break;
                    }case "b2":{
-
+                       purchaseItem(haribo, getMoney());
+                       break;
                    }case "b3":{
-
+                       purchaseItem(kaugummi, getMoney());
+                       break;
                    }case "b4":{
-
+                       purchaseItem(oreos, getMoney());
+                       break;
                    }case "c1":{
-
+                       purchaseItem(blueTakis, getMoney());
+                       break;
                    }case "c2":{
-
+                       purchaseItem(balisto, getMoney());
+                       break;
                    }case "c3":{
-
+                       purchaseItem(natureChips, getMoney());
+                       break;
                    }case "c4":{
-
+                       purchaseItem(redTakis, getMoney());
+                       break;
                    }case "d1":{
-
+                       purchaseItem(cola, getMoney());
+                       break;
                    }case "d2":{
-
+                       purchaseItem(wasserStill, getMoney());
+                       break;
                    }case "d3":{
-
+                       purchaseItem(capriSun, getMoney());
+                       break;
                    }case "d4":{
-
+                       purchaseItem(fanta, getMoney());
+                       break;
                    } default:{
                        System.out.println("Enter a valid Input");
                    }
@@ -130,16 +151,30 @@ public class Machine {
 
            }
 
+           error = true;
+           do {
+               System.out.println("Do you want to buy more things? (Y/N)");
+               decisionRepeat = scan.next().charAt(0);
+               if (decisionRepeat == 'y' ||decisionRepeat == 'Y' ||decisionRepeat == 'n' || decisionRepeat == 'N') {
+                   error = false;
+               }
+           }while (error);
 
-       }while (error);
+           if(decisionRepeat == 'n' || decisionRepeat == 'N') {
+               System.out.println("Thank you for using this ultimate awesome vending machine!!");
+               System.out.println("SEE YOU NEXT TIME :) ");
+               System.out.println("- Yara, Anik & Giulia ");
+               System.exit(0);
+           }
+
+       }while (decisionRepeat == 'y' || decisionRepeat == 'Y');
 
     }
 
-    private void purchaseItem(Item item, float money){
+    private void purchaseItem(Item item, double money){
         this.money = money;
         String inputChoice;
         boolean error = true;
-
 
         System.out.println("You selected " + item.getNameOfTheProduct() + "\n\n");
         printMachineWithPrice(item);
@@ -148,6 +183,7 @@ public class Machine {
             System.out.println("What do you want to do?");
             System.out.println("1. Buy\n2. Cancel");
             inputChoice = scan.nextLine().toLowerCase();
+            scan.nextLine();
             if (inputChoice.equals("1") || inputChoice.equals("1.") || inputChoice.equals("buy")) {
                 error = false;
 
@@ -156,8 +192,8 @@ public class Machine {
                 } else {
                     item.setAmount(item.getAmount() - 1);
                     setMoney((getMoney() - item.getPrice()));
-                    System.out.println(item.getNameOfTheProduct() + " WAS PURCHASED!!");
                     printMachine();
+                    System.out.println(item.getNameOfTheProduct() + " WAS PURCHASED!!");
                 }
             } else if (inputChoice.equals("2") || inputChoice.equals("2.") || inputChoice.equals("cancel")) {
                 error = false;
@@ -169,10 +205,10 @@ public class Machine {
     }
 
 
-    static void printMachine() {
+    void printMachine() {
         clearConsole();
         String formattedMoney = String.format("%.2f", money);
-        System.out.println( //give clear screen
+        System.out.println(
                         "\n                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
                         "                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
                         "                 ###################                    ░██████████████████████████████████████████████████████████████░                                                        \n" +
@@ -206,24 +242,45 @@ public class Machine {
                         "                                                         ░░█▒░  ░ ░█▒                                     ▒█░ ░   ▒█░░                                                         \n" +
                         "                                                           ▓█▓▓▓▓▓▓█▒                                      ▒█▓▓▓▓▓▓█▓                                                           ");
 
-        }
+
+    }
 
     void printMachineWithPrice(Item item) {
         clearConsole();
         String formattedMoney = String.format("%.2f", money);
         String itemPrice = String.format("%.2f", item.getPrice());
+        String itemName = item.getNameOfTheProduct();
+
+        int maxNameLength = 9;
+        //if maltesers this not work
+        //this works with short names
+        //we have to adjust to names for space
+
+        if (itemName.length() > maxNameLength) {
+            itemName = itemName.substring(0, maxNameLength);
+        } else {
+            // Calculate the padding needed on both sides
+            int totalPadding = maxNameLength - itemName.length();
+            int leftPadding = totalPadding / 2;
+            int rightPadding = totalPadding - leftPadding;
+
+            // Create the formatted item name with padding on both sides
+            itemName = String.format("%" + (itemName.length() + leftPadding) + "s%" + rightPadding + "s", itemName, "");
+        }
+
+
         System.out.println(
                 "\n                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
                         "                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
                         "                 ###################                    ░██████████████████████████████████████████████████████████████░                                                        \n" +
                         "                 ##               ##                    ░█████▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒███████████████░                                                        \n" +
-                        "                 ##    $ " + formattedMoney +"     ##                    ░█████▒                                        ░████▓▒█████████░                                                        \n" +
+                        "                 ##    $ " + formattedMoney + "    ##                    ░█████▒                                        ░████▓▒█████████░                                                        \n" +
                         "                 ##               ##                    ░█████▒    " +red + "▒▓▓▓   "+yellow+  "  ▓▓▓  "+red+   "    ░▓▓▓▓  "+yellow+   "   ▓▓▓▓" + reset +"    ░███████████████░                                                        \n" +
                         "                 ###################                    ░█████▒   "+red+ " ▓▓▓▓▒    "+yellow+ "███▓  "+red+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░███████████████░                                                        \n" +
                         "                                                        ░█████▒   "+red+ " █▓██▓ "+yellow+   "  ▓███▓ "+red+   "    ▒████ "+yellow+   "   ░████░ "+reset+  "  ░████▓▓█████████░                                                        \n" +
                         "                                                        ░█████▓▒▒▒▒ A1 ▒▒▒▒▒ A2 ▒▒▒▒▒ A3 ▒▒▒▒▒▒ A4 ▒▒▒▒▒██           ▓█░                                                        \n" +
-                        "                                                        ░█████▒                                        ░██   " + itemPrice + "     ▓█░                                                        \n" +
-                        "                                                        ░█████▒   "+green+  "  ░░░  "+yellow+    "    ░░░  "+green+    "    ░░░  "+yellow+    "    ░░░  "+reset+   "   ░██           ▓█░                                                        \n" +
+                        "                                                        ░█████▒                                        ░██ " + itemName + " ▓█░                                                        \n" +
+                        "                                                        ░█████▒   "+green+  "  ░░░  "+yellow+    "    ░░░  "+green+    "    ░░░  "+yellow+    "    ░░░  "+reset+   "   ░██  $ " + itemPrice + "   ▓█░                                                        \n" +
                         "                                                        ░█████▒   "+green+ " ████▓  "+yellow+  "  ▓███▓ "+green+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░██           ▓█░                                                        \n" +
                         "                                                        ░█████▒   "+green+ " ████▓ "+yellow+  "   ▒███▓ "+green+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░████▓▒█████████░                                                        \n" +
                         "                                                        ░█████▓▒▒▒▒ B1 ▒▒▒▒▒ B2 ▒▒▒▒▒ B3 ▒▒▒▒▒▒ B4 ▒▒▒▒▒████▓▒█████████░                                                        \n" +

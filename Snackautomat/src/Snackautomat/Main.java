@@ -23,9 +23,9 @@ public class Main {
         printLogo();
 
 
-        Machine myVending = new Machine(5);
+        Machine myVending = new Machine();
 
-        Machine.printMachine();
+        myVending.start();
 
 
 
