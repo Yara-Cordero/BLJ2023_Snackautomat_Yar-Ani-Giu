@@ -30,22 +30,23 @@ public class Machine {
     }
     private String[][] vendigItems = new String[4][4];
 
-    Item maltesers = new Item(3.50, "Maltesers", "A1", 10, false);
-    Item mms = new Item(2.50, "M&M", "A2", 20,false);
-    Item snickers = new Item(3.0, "Snickers", "A3", 15, false);
-    Item twix = new Item(2.90, "Twix", "A4", 32, false);
-    Item paprikaChips = new Item(4.20, "P. Chips", "B1", 43, false);
-    Item haribo = new Item(4.80, "Haribo", "B2", 12, false);
-    Item kaugummi = new Item(2.0, "Kaugummi", "B3", 51,false);
-    Item oreos = new Item(3.75, "Oreos", "B4", 23,false);
-    Item blueTakis = new Item(4.95, "Blue Takis", "C1", 17,false);
-    Item balisto = new Item(2.30, "Balisto", "C2", 17,false);
-    Item natureChips = new Item(4.20, "N. Chips", "C3", 31,false);
-    Item redTakis = new Item(4.95, "Red Takis","C4", 19,false);
-    Item cola = new Item(3.80, "Cola", "D1", 45,true);
-    Item wasserStill = new Item(1.75, "Wasser (Still)", "D2", 37, true);
-    Item capriSun = new Item(1.50, "Capri Sun", "D3", 24, true);
-    Item fanta = new Item(3.80, "Fanta", "D4",36,true);
+    Item a1 = new Item(3.50, "Maltesers", 10, false);
+    Item a2 = new Item(2.50, "M&M", 20, false);
+    Item a3 = new Item(3.0, "Snickers", 15, false);
+    Item a4 = new Item(2.90, "Twix", 32, false);
+    Item b1 = new Item(4.20, "P. Chips", 43, false);
+    Item b2 = new Item(4.80, "Haribo", 12, false);
+    Item b3 = new Item(2.0, "Kaugummi", 51, false);
+    Item b4 = new Item(3.75, "Oreos", 23, false);
+    Item c1 = new Item(4.95, "Blue Takis", 17, false);
+    Item c2 = new Item(2.30, "Balisto", 17, false);
+    Item c3 = new Item(4.20, "N. Chips", 31, false);
+    Item c4 = new Item(4.95, "Red Takis", 19, false);
+    Item d1 = new Item(3.80, "Cola", 45, true);
+    Item d2 = new Item(1.75, "Wasser (Still)", 37, true);
+    Item d3 = new Item(1.50, "Capri Sun", 24, true);
+    Item d4 = new Item(3.80, "Fanta", 36, true);
+
     Item extra = new Item(5.0, "Lighter",11,false);
     Item extra2 = new Item(20.0,"Pregnancy test",15,false);
     Item extra3 = new Item(3.0,"Papes",22,false);
@@ -94,56 +95,56 @@ public class Machine {
            scan.nextLine();
            error = true;
            if (secretKey.equals(inputItemPos)) {
-                secretKeyFunction();
+                //secretKeyFunction();
            }else {
                switch (inputItemPos){
                    case "a1":{
-                       purchaseItem(maltesers, getMoney());
+                       purchaseItem(a1, getMoney());
                        break;
                    }case "a2":{
-                       purchaseItem(mms, getMoney());
+                       purchaseItem(a2, getMoney());
                        break;
                    }case "a3":{
-                       purchaseItem(snickers, getMoney());
+                       purchaseItem(a3, getMoney());
                        break;
                    }case "a4":{
-                       purchaseItem(twix, getMoney());
+                       purchaseItem(a4, getMoney());
                        break;
                    }case "b1":{
-                       purchaseItem(paprikaChips, getMoney());
+                       purchaseItem(b1, getMoney());
                        break;
                    }case "b2":{
-                       purchaseItem(haribo, getMoney());
+                       purchaseItem(b2, getMoney());
                        break;
                    }case "b3":{
-                       purchaseItem(kaugummi, getMoney());
+                       purchaseItem(b3, getMoney());
                        break;
                    }case "b4":{
-                       purchaseItem(oreos, getMoney());
+                       purchaseItem(b4, getMoney());
                        break;
                    }case "c1":{
-                       purchaseItem(blueTakis, getMoney());
+                       purchaseItem(c1, getMoney());
                        break;
                    }case "c2":{
-                       purchaseItem(balisto, getMoney());
+                       purchaseItem(c2, getMoney());
                        break;
                    }case "c3":{
-                       purchaseItem(natureChips, getMoney());
+                       purchaseItem(c3, getMoney());
                        break;
                    }case "c4":{
-                       purchaseItem(redTakis, getMoney());
+                       purchaseItem(c4, getMoney());
                        break;
                    }case "d1":{
-                       purchaseItem(cola, getMoney());
+                       purchaseItem(d1, getMoney());
                        break;
                    }case "d2":{
-                       purchaseItem(wasserStill, getMoney());
+                       purchaseItem(d2, getMoney());
                        break;
                    }case "d3":{
-                       purchaseItem(capriSun, getMoney());
+                       purchaseItem(d3, getMoney());
                        break;
                    }case "d4":{
-                       purchaseItem(fanta, getMoney());
+                       purchaseItem(d4, getMoney());
                        break;
                    } default:{
                        System.out.println("Enter a valid Input");
@@ -206,6 +207,7 @@ public class Machine {
         }while (error);
     }
 
+    /*
     public void secretKeyFunction() {
         Scanner scanner = new Scanner(System.in);
         boolean error = true;
@@ -225,7 +227,7 @@ public class Machine {
                     //  restockItem();
                 } else if (inputSecretKeyChoice.equals("2") || inputSecretKeyChoice.equals("2.") || inputSecretKeyChoice.equals("change price")) {
                     error = false;
-                    changePrice();
+                    changePrice(a1);
                 } else if (inputSecretKeyChoice.equals("3") || inputSecretKeyChoice.equals("3.") || inputSecretKeyChoice.equals("replace item")) {
                     error = false;
                     //replaceItem();
@@ -244,8 +246,9 @@ public class Machine {
             }
         }while(repeat);
 
-    }
+    }*/
 
+    /*
     private void changePrice(Item item) {
         boolean error = true;
 
@@ -267,24 +270,7 @@ public class Machine {
                 System.out.println("Product number does not match. Please try again.");
             }
         } while (error);
-    }
-
-
-        /*
-        boolean found = false;
-        for (Item item : vendigItems) {
-            if (item.getProductNumber().toLowerCase().equals(itemProductNumber)) {
-                item.setPrice(newPrice);
-                found = true;
-                System.out.println("The price of " + item.getProductNumber() + " has been updated to " + newPrice);
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("Item not found in the vending machine.");
-        }
-        */
-
+    }*/
 
 
     public void replaceItem() {
@@ -295,10 +281,6 @@ public class Machine {
 
 
     }
-
-
-
-
 
     void printMachine() {
         clearConsole();

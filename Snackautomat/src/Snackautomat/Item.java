@@ -4,21 +4,8 @@ public class Item {
 
     private double price;
     private String nameOfTheProduct;
-    private String productNumber;    //These are the fix product numbers
     private int amount;
     private boolean isDrink;
-
-    public Item(double price, String nameOfTheProduct, String productNumber, int amount, boolean isDrink) {
-        this.price = price;
-        this.nameOfTheProduct = nameOfTheProduct;
-        this.productNumber = productNumber;
-        this.amount = amount;
-        this.isDrink = isDrink;
-    }
-
-    public Item(String productNumber) {
-        this.productNumber = productNumber;
-    }
 
     public Item(double price, String nameOfTheProduct, int amount, boolean isDrink) {
         this.price = price;
@@ -26,7 +13,6 @@ public class Item {
         this.amount = amount;
         this.isDrink = isDrink;
     }
-
 
 
     public double getPrice() {
@@ -45,10 +31,6 @@ public class Item {
         this.nameOfTheProduct = nameOfTheProduct;
     }
 
-    public String getProductNumber() {
-        return productNumber;
-    }
-
     public int getAmount() {
         return amount;
     }
@@ -64,7 +46,5 @@ public class Item {
     public void setDrink(boolean drink) {
         isDrink = drink;
     }
-
-
 }
 
