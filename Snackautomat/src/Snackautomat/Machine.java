@@ -52,7 +52,9 @@ public class Machine {
     Item extra3 = new Item(3.0,"Papes",22,false);
     Item extra4 = new Item(14.0,"Vape", 16,false);
     Item extra5 = new Item(20.0, "Powerbank", 10, false);
-    Item extra6 = new Item()
+    Item extra6 = new Item(6.50, "Condoms", 10, false);
+    Item extra7 = new Item(2.50, "Red Bull", 15, true);
+    Item extra8 = new Item(3.40, "Ice Tea", 8, true);
 
 
     public Machine() {
