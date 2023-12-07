@@ -11,7 +11,7 @@ Wir haben uns aufgemahlt wie unser Snack Automat aussehen soll und aufgeschriebe
 <img width="200" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/8b251528-2be7-456a-a6b9-faf853a2666f">
 
 
-Um unser Vorhaben in die Tat umsetzen zu können, haben wir uns als Hilfestellung ein Activity Diagramm erstellt. Wobei wir hier einen kleinen Fehler gemacht haben und zwar das man kein Geld einwerfen kann und wenn zu wenig Geld vorhanden ist das das Geld nicht wieder zurückerstattet wird.
+Um unser Vorhaben in die Tat umsetzen zu können, haben wir uns als Hilfestellung ein Activity Diagramm erstellt. Wobei wir hier einen kleinen Fehler gemacht haben und zwar das man kein Geld einwerfen kann und wenn zu wenig Geld vorhanden ist, dass das Geld nicht wieder zurückerstattet wird.
 
 
 <img width="800" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/722557bb-85a5-412c-95cb-20852ffa2585">
