@@ -1,11 +1,10 @@
 package Snackautomat;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Machine {
 
+    private final int MAX_AMOUNT = 15;
     private double money;
     private final String secretKey = "secret key";
     public final static void clearConsole()
@@ -31,30 +30,30 @@ public class Machine {
     private String[][] vendigItems = new String[4][4];
 
     Item a1 = new Item(3.50, "Maltesers", 10, false);
-    Item a2 = new Item(2.50, "M&M", 20, false);
-    Item a3 = new Item(3.0, "Snickers", 15, false);
-    Item a4 = new Item(2.90, "Twix", 32, false);
-    Item b1 = new Item(4.20, "P. Chips", 43, false);
-    Item b2 = new Item(4.80, "Haribo", 12, false);
-    Item b3 = new Item(2.0, "Kaugummi", 51, false);
-    Item b4 = new Item(3.75, "Oreos", 23, false);
-    Item c1 = new Item(4.95, "Blue Takis", 17, false);
-    Item c2 = new Item(2.30, "Balisto", 17, false);
-    Item c3 = new Item(4.20, "N. Chips", 31, false);
-    Item c4 = new Item(4.95, "Red Takis", 19, false);
-    Item d1 = new Item(3.80, "Cola", 45, true);
-    Item d2 = new Item(1.75, "Wasser (Still)", 37, true);
-    Item d3 = new Item(1.50, "Capri Sun", 24, true);
-    Item d4 = new Item(3.80, "Fanta", 36, true);
+    Item a2 = new Item(2.50, "M&M", 10, false);
+    Item a3 = new Item(3.0, "Snickers", 10, false);
+    Item a4 = new Item(2.90, "Twix", 10, false);
+    Item b1 = new Item(4.20, "P. Chips", 10, false);
+    Item b2 = new Item(4.80, "Haribo", 10, false);
+    Item b3 = new Item(2.0, "Kaugummi", 10, false);
+    Item b4 = new Item(3.75, "Oreos", 10, false);
+    Item c1 = new Item(4.95, "Blue Takis", 10, false);
+    Item c2 = new Item(2.30, "Balisto", 10, false);
+    Item c3 = new Item(4.20, "N. Chips", 10, false);
+    Item c4 = new Item(4.95, "Red Takis", 10, false);
+    Item d1 = new Item(3.80, "Cola", 10, true);
+    Item d2 = new Item(1.75, "Wasser (Still)", 10, true);
+    Item d3 = new Item(1.50, "Capri Sun", 10, true);
+    Item d4 = new Item(3.80, "Fanta", 10, true);
 
-    Item extra = new Item(5.0, "Lighter",11,false);
-    Item extra2 = new Item(20.0,"Pregnancy test",15,false);
-    Item extra3 = new Item(3.0,"Papes",22,false);
-    Item extra4 = new Item(14.0,"Vape", 16,false);
+    Item extra1 = new Item(5.0, "Lighter",10,false);
+    Item extra2 = new Item(20.0,"Pregnancy test",10,false);
+    Item extra3 = new Item(3.0,"Papes",10,false);
+    Item extra4 = new Item(14.0,"Vape", 10,false);
     Item extra5 = new Item(20.0, "Powerbank", 10, false);
     Item extra6 = new Item(6.50, "Condoms", 10, false);
-    Item extra7 = new Item(2.50, "Red Bull", 15, true);
-    Item extra8 = new Item(3.40, "Ice Tea", 8, true);
+    Item extra7 = new Item(2.50, "Red Bull", 10, true);
+    Item extra8 = new Item(3.40, "Ice Tea", 10, true);
 
 
     public Machine() {
@@ -222,7 +221,7 @@ public class Machine {
                 System.out.println("You got the " + yellow + "SECRET KEY!!" + reset);
                 System.out.println("What do you want to do?");
                 System.out.println("Which item do you want to edit? ");
-                Item inputSecretKeyItem = scanner.nextLine();
+
                 System.out.println("1. Restock item\n2. Change Price\n3. Replace item\n4. Cancel");
 
                 String inputSecretKeyChoice = scanner.nextLine().toLowerCase();
@@ -232,10 +231,10 @@ public class Machine {
                     //  restockItem();
                 } else if (inputSecretKeyChoice.equals("2") || inputSecretKeyChoice.equals("2.") || inputSecretKeyChoice.equals("change price")) {
                     error = false;
-                    changePrice(inputSecretKeyItem);
+                    changePrice(a1);
                 } else if (inputSecretKeyChoice.equals("3") || inputSecretKeyChoice.equals("3.") || inputSecretKeyChoice.equals("replace item")) {
                     error = false;
-                    replaceItem(inputSecretKeyItem);
+                    replaceItem(a1);
                 } else if (inputSecretKeyChoice.equals("4") || inputSecretKeyChoice.equals("4.") || inputSecretKeyChoice.equals("cancel")) {
                     error = false;
                 } else {
@@ -252,7 +251,11 @@ public class Machine {
         }while(repeat);
 
     }
-    private void restockItem
+
+
+    private void restockItem(Item item) {
+
+    }
 
 
     private void changePrice(Item item) {
@@ -269,10 +272,53 @@ public class Machine {
     private void replaceItem(Item item) {
 
         Scanner in = new Scanner(System.in);
-        System.out.println("With which item do you want to replace " + item.getNameOfTheProduct());
-        String newName = in.nextLine();
 
-        item.setNameOfTheProduct(newName);
+        System.out.println("With which item do you want to replace " + item.getNameOfTheProduct() + "\n" +
+                "1. " + extra1.getNameOfTheProduct() + "\t" + "5. " + extra5.getNameOfTheProduct() + "\n" +
+                "2. " + extra2.getNameOfTheProduct() + "\t" + "6. " + extra6.getNameOfTheProduct() + "\n" +
+                "3. " + extra3.getNameOfTheProduct() + "\t" + "7. " + extra7.getNameOfTheProduct() + "\n" +
+                "4. " + extra4.getNameOfTheProduct() + "\t" + "8. " + extra8.getNameOfTheProduct() + "\n");
+
+        int replaceItem = in.nextInt();
+        Item temp = item;
+        switch (replaceItem) {
+            case 1: {
+                item = extra1;
+                extra1 = temp;
+                break;
+            } case 2: {
+                item = extra2;
+                extra2 = temp;
+                break;
+            } case 3: {
+                item = extra3;
+                extra3 = temp;
+                break;
+            } case 4: {
+                item = extra4;
+                extra6 = temp;
+                break;
+            } case 5: {
+                item = extra5;
+                extra5 = temp;
+                break;
+            } case 6: {
+                item = extra6;
+                extra6 = temp;
+                break;
+            } case 7: {
+                item = extra7;
+                extra7 = temp;
+                break;
+            } case 8: {
+                item = extra8;
+                extra8 = temp;
+                break;
+            } default: {
+                System.out.println("Invalid input");
+            }
+        }
+
         System.out.println("Your item has been replaced with " + item.getNameOfTheProduct());
 
     }

@@ -2,6 +2,7 @@ package Snackautomat;
 
 public class Item {
 
+
     private double price;
     private String nameOfTheProduct;
     private int amount;
