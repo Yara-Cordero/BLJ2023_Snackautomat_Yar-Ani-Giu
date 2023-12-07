@@ -16,7 +16,7 @@ Um unser Vorhaben in die Tat umsetzen zu können, haben wir uns als Hilfestellun
 
 <img width="800" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/722557bb-85a5-412c-95cb-20852ffa2585">
 
-Hier ist das Activity Diagramm das wir noch verbessert haben.
+Hier ist das verbessetrte Activity Diagramm.
 
 <img width="800" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/c06d93ed-f533-464b-85ef-c8fcdd857a15">
 
