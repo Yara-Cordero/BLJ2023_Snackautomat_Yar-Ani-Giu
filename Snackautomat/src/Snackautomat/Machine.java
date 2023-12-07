@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Machine {
 
     private double money;
-    private final String secretKey = "secret Key";
+    private final String secretKey = "secret key";
     public final static void clearConsole()
     {
         try
@@ -28,17 +28,17 @@ public class Machine {
     }
     private String[][] vendigItems = new String[4][4];
 
-    Item maltesers = new Item(3.50, "Malteser", "A1", 10, false);
+    Item maltesers = new Item(3.50, "Maltesers", "A1", 10, false);
     Item mms = new Item(2.50, "M&M", "A2", 20,false);
     Item snickers = new Item(3.0, "Snickers", "A3", 15, false);
     Item twix = new Item(2.90, "Twix", "A4", 32, false);
-    Item paprikaChips = new Item(4.20, "Paprika Chips", "B1", 43, false);
+    Item paprikaChips = new Item(4.20, "P. Chips", "B1", 43, false);
     Item haribo = new Item(4.80, "Haribo", "B2", 12, false);
     Item kaugummi = new Item(2.0, "Kaugummi", "B3", 51,false);
     Item oreos = new Item(3.75, "Oreos", "B4", 23,false);
     Item blueTakis = new Item(4.95, "Blue Takis", "C1", 17,false);
     Item balisto = new Item(2.30, "Balisto", "C2", 17,false);
-    Item natureChips = new Item(4.20, "Nature Chips", "C3", 31,false);
+    Item natureChips = new Item(4.20, "N. Chips", "C3", 31,false);
     Item redTakis = new Item(4.95, "Red Takis","C4", 19,false);
     Item cola = new Item(3.80, "Cola", "D1", 45,true);
     Item wasserStill = new Item(1.75, "Wasser (Still)", "D2", 37, true);
@@ -73,7 +73,7 @@ public class Machine {
        do{
            try{
                System.out.println("How much money do you have on you?");
-               money = scan.nextDouble();
+               money = scan.nextDouble(); //work
                scan.nextLine();
                error = false;
 
@@ -88,11 +88,10 @@ public class Machine {
        do {
            printMachine();
 
-           String inputItemPos = scan.nextLine().toLowerCase();
-           scan.nextLine();
+           String inputItemPos = scan.nextLine().toLowerCase(); //have to enter twice
            error = true;
            if (secretKey.equals(inputItemPos)) {
-               //secret key function (
+               secretKey();
            }else {
                switch (inputItemPos){
                    case "a1":{
@@ -183,7 +182,6 @@ public class Machine {
             System.out.println("What do you want to do?");
             System.out.println("1. Buy\n2. Cancel");
             inputChoice = scan.nextLine().toLowerCase();
-            scan.nextLine();
             if (inputChoice.equals("1") || inputChoice.equals("1.") || inputChoice.equals("buy")) {
                 error = false;
 
@@ -202,6 +200,44 @@ public class Machine {
                 System.out.println("Enter a valid Input");
             }
         }while (error);
+    }
+
+    private void secretKey() {
+        boolean error, repeat = true;
+
+
+        do {
+            do {
+                System.out.println("You got the " + yellow + "SECRET KEY!!" + reset);
+                System.out.println("What do you want to do?");
+                System.out.println("1. Restock item\n2. Change Price\n3. Replace item\n4. Cancel");
+
+                String inputSecretKeyChoice = scan.nextLine().toLowerCase();
+
+                if (inputSecretKeyChoice.equals("1") || inputSecretKeyChoice.equals("1.") || inputSecretKeyChoice.equals("restock item")) {
+                    error = false;
+                    restockItem();
+                } else if (inputSecretKeyChoice.equals("2") || inputSecretKeyChoice.equals("2.") || inputSecretKeyChoice.equals("change price")) {
+                    error = false;
+                    changePrice();
+                } else if (inputSecretKeyChoice.equals("3") || inputSecretKeyChoice.equals("3.") || inputSecretKeyChoice.equals("replace item")) {
+                    error = false;
+                    replaceItem();
+                } else if (inputSecretKeyChoice.equals("4") || inputSecretKeyChoice.equals("4.") || inputSecretKeyChoice.equals("cancel")) {
+                    error = false;
+                } else {
+                    System.out.println("Invalid Input");
+                }
+            } while (error);
+
+            System.out.println("Do you want to make more changes? (Y/N)");
+            char inputRepeat = scan.next().charAt(0);
+
+            if(inputRepeat == 'n' || inputRepeat == 'N'){
+                repeat = false;
+            }
+        }while(repeat);
+
     }
 
 
@@ -251,7 +287,7 @@ public class Machine {
         String itemPrice = String.format("%.2f", item.getPrice());
         String itemName = item.getNameOfTheProduct();
 
-        int maxNameLength = 9;
+        int maxNameLength = 10;
         //if maltesers this not work
         //this works with short names
         //we have to adjust to names for space
@@ -279,7 +315,7 @@ public class Machine {
                         "                 ###################                    ░█████▒   "+red+ " ▓▓▓▓▒    "+yellow+ "███▓  "+red+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░███████████████░                                                        \n" +
                         "                                                        ░█████▒   "+red+ " █▓██▓ "+yellow+   "  ▓███▓ "+red+   "    ▒████ "+yellow+   "   ░████░ "+reset+  "  ░████▓▓█████████░                                                        \n" +
                         "                                                        ░█████▓▒▒▒▒ A1 ▒▒▒▒▒ A2 ▒▒▒▒▒ A3 ▒▒▒▒▒▒ A4 ▒▒▒▒▒██           ▓█░                                                        \n" +
-                        "                                                        ░█████▒                                        ░██ " + itemName + " ▓█░                                                        \n" +
+                        "                                                        ░█████▒                                        ░██ " + itemName + "▓█░                                                        \n" +
                         "                                                        ░█████▒   "+green+  "  ░░░  "+yellow+    "    ░░░  "+green+    "    ░░░  "+yellow+    "    ░░░  "+reset+   "   ░██  $ " + itemPrice + "   ▓█░                                                        \n" +
                         "                                                        ░█████▒   "+green+ " ████▓  "+yellow+  "  ▓███▓ "+green+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░██           ▓█░                                                        \n" +
                         "                                                        ░█████▒   "+green+ " ████▓ "+yellow+  "   ▒███▓ "+green+   "   ▒████ "+yellow+   "   ░████░ "+reset+  "  ░████▓▒█████████░                                                        \n" +
