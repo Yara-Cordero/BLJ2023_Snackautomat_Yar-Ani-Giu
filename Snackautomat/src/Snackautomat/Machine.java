@@ -51,6 +51,8 @@ public class Machine {
     Item extra2 = new Item(20.0,"Pregnancy test",15,false);
     Item extra3 = new Item(3.0,"Papes",22,false);
     Item extra4 = new Item(14.0,"Vape", 16,false);
+    Item extra5 = new Item(20.0, "Powerbank", 10, false);
+    Item extra6 = new Item()
 
 
     public Machine() {
@@ -213,11 +215,12 @@ public class Machine {
         boolean error = true;
         boolean repeat = true;
 
-
         do {
             do {
                 System.out.println("You got the " + yellow + "SECRET KEY!!" + reset);
                 System.out.println("What do you want to do?");
+                System.out.println("Which item do you want to edit? ");
+                Item inputSecretKeyItem = scanner.nextLine();
                 System.out.println("1. Restock item\n2. Change Price\n3. Replace item\n4. Cancel");
 
                 String inputSecretKeyChoice = scanner.nextLine().toLowerCase();
@@ -227,10 +230,10 @@ public class Machine {
                     //  restockItem();
                 } else if (inputSecretKeyChoice.equals("2") || inputSecretKeyChoice.equals("2.") || inputSecretKeyChoice.equals("change price")) {
                     error = false;
-                    changePrice(a1);
+                    changePrice(inputSecretKeyItem);
                 } else if (inputSecretKeyChoice.equals("3") || inputSecretKeyChoice.equals("3.") || inputSecretKeyChoice.equals("replace item")) {
                     error = false;
-                    //replaceItem();
+                    replaceItem(inputSecretKeyItem);
                 } else if (inputSecretKeyChoice.equals("4") || inputSecretKeyChoice.equals("4.") || inputSecretKeyChoice.equals("cancel")) {
                     error = false;
                 } else {
@@ -247,6 +250,7 @@ public class Machine {
         }while(repeat);
 
     }
+    private void restockItem
 
 
     private void changePrice(Item item) {
@@ -260,12 +264,14 @@ public class Machine {
     }
 
 
-    public void replaceItem() {
+    private void replaceItem(Item item) {
+
         Scanner in = new Scanner(System.in);
-        System.out.println("Which item do you want to replace?");
-        String itemPos = in.nextLine();
+        System.out.println("With which item do you want to replace " + item.getNameOfTheProduct());
+        String newName = in.nextLine();
 
-
+        item.setNameOfTheProduct(newName);
+        System.out.println("Your item has been replaced with " + item.getNameOfTheProduct());
 
     }
 
