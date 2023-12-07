@@ -61,13 +61,36 @@ Als wir uns dann für diesen Automaten entschieden, mussten wir uns überlegen w
 
 <img width="700" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/98eb47e7-541a-4270-9365-faa3f5d79aa3">
 
-
+Beim Realisieren hatten wir uns auch entschieden, dass wenn du den secret Key hattest, die Items restocken, den Name verändern und den Preis ändern konntest. 
 
 
 # Realisieren
 
+Das erste das wir beim Realisieren angingen war, dass wir unser GitHub Repo erstellten. Danach hatten wir die Repo auf 
+unsere Laptops gecloned. 
 
+Wir erstellten unsere verschieden Files.
 
+- Main.java
+(Hier wird nur die start Funktion aufgerufen)
+
+- Machine.java 
+(Hier werden alle Funktionen erstellt)
+  - start();
+  - secretKey();
+  - purchaseItem();
+  - printAutomat();
+  - printAutomatWithPrice();
+  - restock();
+  - changePrice();
+
+- Item.java
+(Hier wurden die Attribute von unsere Items erfasst)
+  - double price
+  - String nameOfTheProduct
+  - int amount
+
+Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser auch deine Geld Summe und den Preis und Name eines Gegenstandes printed. Wir färbten auch die verschiedenen Items ein um das Aussehen des Automates zu verschönern.
 # Kontrollieren
 
 # Auswerten
