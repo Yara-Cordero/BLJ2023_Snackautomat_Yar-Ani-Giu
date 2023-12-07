@@ -57,7 +57,7 @@ Wir mussten viele Entscheidungen während dem Planen und Realisieren treffen. Be
 
 <br><br>
 
-Als wir uns dann für diesen Automaten entschieden, mussten wir uns überlegen wo wir das Geld anzeigen. Entweder wird es in einer seperaten Funktion geprinted oder gleich neben dem Automaten. Da es besser als neben dem Automaten aussieht entschieden wir uns für das.
+Als wir uns dann für diesen Automaten entschieden, mussten wir uns überlegen wo wir das Geld anzeigen. Entweder wird es in einer seperaten Funktion geprinted oder gleich neben dem Automaten. Da es besser neben dem Automaten aussieht entschieden wir uns dafür.
 
 <img width="700" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/98eb47e7-541a-4270-9365-faa3f5d79aa3">
 
