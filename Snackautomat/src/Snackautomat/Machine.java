@@ -247,9 +247,10 @@ public class Machine {
     }
 
     private void changePrice(Item item) {
-        boolean error = true;
+        boolean error;
 
         do {
+            error = true;
             System.out.println("Enter the product number for the item whose price you want to change:");
             String inputProductNumber = scan.nextLine().toLowerCase();
 
@@ -262,7 +263,7 @@ public class Machine {
                 scan.nextLine(); // Consume the newline character after reading the double
 
                 item.setPrice(newPrice); // Assuming setPrice() method exists in the Item class to change the price
-                error = false; // Set error to false to exit the loop
+                error = false; // Set error to false for exit the loop
             } else {
                 System.out.println("Product number does not match. Please try again.");
             }
