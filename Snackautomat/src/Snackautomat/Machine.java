@@ -257,7 +257,24 @@ public class Machine {
 
 
     private void restockItem(Item item) {
+        System.out.println("Do you want to set the item to max(15) or default amount(10)");
+        String restockChoice = scan.next();
 
+        if(restockChoice == "max" || restockChoice == "15") {
+            int calcMaxAmount = 15 - item.getAmount();
+            item.setAmount(item.getAmount() + calcMaxAmount);
+            System.out.println(item.getNameOfTheProduct() + "has now been restocked to " + item.getAmount() + "items");
+        } else if (restockChoice == "default" || restockChoice == "10") {
+            if(item.getAmount() == 10) {
+                double calcDefAmount = 10 - item.getAmount();
+                item.setPrice(item.getAmount() + calcDefAmount);
+                System.out.println(item.getNameOfTheProduct() + "has now been restocked to " + item.getAmount() + "items");
+            } else {
+                System.out.println("There are already 10");
+            }
+        } else {
+            System.out.println("There has been an error");
+        }
     }
 
 
@@ -274,15 +291,13 @@ public class Machine {
 
     private void replaceItem(Item item) {
 
-        Scanner in = new Scanner(System.in);
-
         System.out.println("With which item do you want to replace " + item.getNameOfTheProduct() + "\n" +
                 "1. " + extra1.getNameOfTheProduct() + "\t" + "5. " + extra5.getNameOfTheProduct() + "\n" +
                 "2. " + extra2.getNameOfTheProduct() + "\t" + "6. " + extra6.getNameOfTheProduct() + "\n" +
                 "3. " + extra3.getNameOfTheProduct() + "\t" + "7. " + extra7.getNameOfTheProduct() + "\n" +
                 "4. " + extra4.getNameOfTheProduct() + "\t" + "8. " + extra8.getNameOfTheProduct() + "\n");
 
-        int replaceItem = in.nextInt();
+        int replaceItem = scan.nextInt();
         Item temp = item;
         switch (replaceItem) {
             case 1: {
