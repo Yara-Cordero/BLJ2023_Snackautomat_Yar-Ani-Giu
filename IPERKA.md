@@ -61,9 +61,7 @@ Beim Realisieren hatten wir uns auch entschieden, dass wenn du den secret Key ha
 # Realisieren
 
 Das erste das wir beim Realisieren angingen war, dass wir unser GitHub Repo erstellten. Danach hatten wir die Repo auf 
-unsere Laptops gecloned. 
-
-Wir erstellten unsere verschieden Files.
+unsere Laptops gecloned und erstellten unsere verschiedenen Files:
 
 ## Main.java
 Hier wird nur die start Funktion aufgerufen in der alle Funktionen bereits zu einem Programm zusammenhefügt wurden. 
