@@ -135,9 +135,23 @@ Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser au
 Wir haben unser Code mehr oder weniger fertiggestellt und kontrolliert, wobei uns ein paar Fehler aufgefallen sind die wir noch beheben müssen. Was noch ein Problem ist, ist das wenn man ein Objekt kauft und dann nochmals eins Kaufen möchte dies noch nicht so ganz funktioniert wie wir uns das vorgestellt haben. Ein weiters noch bestehendes Problem ist der secret key. Es funktionieren noch nicht alle funktionen im secret key wie sie Funktionieren sollten. Es gibt aber auch noch sehr kleine Probleme die im Code noch behoben werden müssen.
 Die Funktionen die im Secret Key beinhaltet sind sollten funktionieren jedoch gibt es ein Fehler bei der Funktion selbst die sie alle zu einem Programm macht. 
 
+<img width="1000" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/47e6e404-1b91-4b49-a688-3802d815f63e">
+
+
 ## Bugs
 - SecretKey Function
 - Wiederholung der Kauffunktion 
 - Zweimal Enter drücken nach einer Eingabe
 
 # Auswerten
+
+#### Anik
+Alles in allem ist uns dieses Projekt ziemlich gut gelungen. Wir haben ein Funktionierendes End-Resultat mit den Features, die wir von Anfang an drin haben wollten. Unsere Zusammenarbeit war sehr harmonisch wir haben uns gegenseitig geholfen und uns immer ausgetauscht. Am Anfang war Giulia krank und dessahlb mussten Yara und ich den Anfang des Projekts alleine machen und Planen. ALs Giulia dann wieder gesund war haben wir, ihr unsere Ideen und Gedankengänge erklärt und den Code, den wir bis da hatten gezeigt. Wir haben die noch übrigen Features aufgeteilt, so dass jeder noch etwas zu coden hat. Was auch noch sehr gut funktioniert hat, sind die zuverlässigen und regelmässigen commits und updates des Codes.
+
+
+#### Yara
+
+
+
+
+#### Giulia
