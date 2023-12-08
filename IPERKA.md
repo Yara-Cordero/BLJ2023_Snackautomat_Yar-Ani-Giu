@@ -77,6 +77,12 @@ Möglichkeiten beim austauschen der Produkte zu haben.
 Für den Benutzer ohne den Secret Key sind jedoch nur die Produkte käuflich die in der Maschine sind. 
 
 #### purchaseItem();
+Die Funktion hat damit begonnen das man nur gefragt wird ob man das Item kaufen will oder nicht. Die Frage welches Item eine Preisveränderung erhält wird schon in der secretKeyFunction(); bestimmt. Wenn du dich entscheidest das Item zu kaufen macht es einen Check ob du überhaupt genug Geld hast, wenn ja kannst du das Item kaufen und kommst wieder aus der Funktion raus. 
+
+Die Funktion enthält auch eine Überprufüng ob der Input auch valide ist, wenn er jedoch nicht ist macht es einen Loop und su wirst nochmal gefragt.
+
+<img width="500" alt="purchaseItemCode" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/2eb75602-29c1-4a8c-8781-15a56766c24f">
+
 #### printAutomat();
 
 <img width="800" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/6990e86c-2342-4f6d-af7e-0fb170577c4f">
