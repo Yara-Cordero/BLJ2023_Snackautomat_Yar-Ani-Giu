@@ -85,7 +85,7 @@ public class Machine {
                error = false;      //Input is valid so we can exit the code
 
            }catch (Exception e){    // is used to catch and handle exceptions that occur within a try block
-               System.out.println("Enter valid input");
+               System.out.println("Enter valid input!!\n");
                scan.nextLine(); //Discard the invalid input
            }
 
