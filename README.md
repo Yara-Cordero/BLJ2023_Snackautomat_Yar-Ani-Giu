@@ -1,9 +1,9 @@
 # BLJ2023_Snackautomat_Yar-Ani-Giu
 
 # IPERKA System
-- Informieren[Informieren](IPERKA.md#informieren)
-- Plannen
-- Entscheiden
-- Realisieren
-- Kontrollieren
-- Auswerten
+- [Informieren](IPERKA.md#informieren)
+- [Plannen](IPERKA.md#planen)
+- [Entscheiden](IPERKA.md#entscheiden)
+- [Realisieren](IPERKA.md#realisieren)
+- [Kontrollieren](IPERKA.md#kontrollieren)
+- [Auswerten](IPERKA.md#auswerten)
