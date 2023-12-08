@@ -88,6 +88,7 @@ Als wir begannen an der Restock Funktion zu arbeiten, haben wir uns dazu entschi
 
 Wir haben es auch so gemacht dass es die fehlenden Anzahl Stücke berechnet und nur diese dann dazufügt. Wir haben uns dazu entschieden da es ja ein Automat ist und mann beim Auffüllen nicht alle Artikel ersetzen will sondern nur auffüllen möchte. 
 Beim auffüllen auf 10 überprüft das Programm ebenfalls ob schon 10 Stücke vorhanden sind oder nicht. 
+
 <img width="500" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566901/595be87f-739e-4920-8fb7-11915dc37695">
 
 
