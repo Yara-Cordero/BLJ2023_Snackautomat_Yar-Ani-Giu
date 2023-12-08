@@ -40,13 +40,11 @@ Um uns das Fehler beheben einfacher zu machen, erstellten wir einen Loop in unse
 
 <img width="500" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/207800cf-08f4-4fdb-9569-fe367c2f7d12">
 
-## Arbeitsaufteilung
 
 # Entscheiden
 
 Wir mussten viele Entscheidungen während dem Planen und Realisieren treffen. Beim Planen mussten wir uns zwischen verschiedenen ASCII Snackautomaten entscheiden und welches für unser Projekt besser passt. Wir haben und schlussendlich für die simplere Version entschieden, da wir die Reihen und Zeilen am besten gezeigt werden. 
 
-<img width="400" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/abb51e11-ee49-47a2-99d8-8ccd00048a03">
 <img width="400" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/fa8e2b3b-57ed-48e6-b5ed-060ff2f3f0f9">
 
 <br><br>
