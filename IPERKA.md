@@ -91,8 +91,16 @@ Für den Benutzer ohne den Secret Key sind jedoch nur die Produkte käuflich die
   
 ### secretKey();
 #### restock();
+Als wir begannen an der Restock Funktion zu arbeiten, haben wir uns dazu entschieden dass wir als Standard von allen Produkten 10 Stücke haben. In der Restock Funktion kann man dann entscheiden ob man das Produkt wieder auf 10 auffüllt oder für besonders beliebte Produkte kann man die Anzahl auch auf das Maximum von 15 setzen. 
+
+Wir haben es auch so gemacht dass es die fehlenden Anzahl Stücke berechnet und nur diese dann dazufügt. Wir haben uns dazu entschieden da es ja ein Automat ist und mann beim Auffüllen nicht alle Artikel ersetzen will sondern nur auffüllen möchte. 
+Beim auffüllen auf 10 überprüft das Programm ebenfalls ob schon 10 Stücke vorhanden sind oder nicht. 
+
 #### changePrice();
 #### replaceItem();
+Da wir bei der Replace Item Funktion hatten das Item zu addressieren entschieden wir uns dazu die Produkte nach Position zu benennen. Somit konnten wir einfach die Daten miteinander wechseln mit einer Temporärer Variable um keiner der Items zu verlieren. 
+
+<img width="500" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566901/ef0b0dc1-f59b-468a-975c-abb070ab05d7">
 
 ## Item.java
 Hier haben wir die 
