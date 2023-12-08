@@ -66,6 +66,7 @@ public class Machine {
                 System.out.println("Enter a valid number");
             }
         }
+
        setMoney(money);
 
        do {
