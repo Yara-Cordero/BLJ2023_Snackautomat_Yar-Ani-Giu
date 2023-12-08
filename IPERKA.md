@@ -83,7 +83,7 @@ Für den Benutzer ohne den Secret Key sind jedoch nur die Produkte käuflich die
 
 #### printAutomatWithPrice();
 
-<img wodth="500" alt="image" src"https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/ec53482f-b724-490f-b97e-d8c375445de6">
+<img wodth="500" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/ec53482f-b724-490f-b97e-d8c375445de6">
 
   
 ### secretKey();
