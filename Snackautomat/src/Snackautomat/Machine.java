@@ -82,11 +82,11 @@ public class Machine {
                System.out.println("How much money do you have on you?");
                money = scan.nextDouble();
                scan.nextLine();
-               error = false;
+               error = false;      //Input is valid so we can exit the code
 
-           }catch (Exception e){
+           }catch (Exception e){    // is used to catch and handle exceptions that occur within a try block
                System.out.println("Enter valid input");
-               scan.nextLine();
+               scan.nextLine(); //Discard the invalid input
            }
 
        }while(error);
