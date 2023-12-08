@@ -84,10 +84,17 @@ Die Funktion enthält auch eine Überprufüng ob der Input auch valide ist, wenn
 <img width="500" alt="purchaseItemCode" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/2eb75602-29c1-4a8c-8781-15a56766c24f">
 
 #### printAutomat();
+Es gibt zwei Funktionen um den Automaten zu printen. Diese Funktion printet jedoch nur dein aktuellen Geldbetrag und die den Automaten ohne irgendwelche Infos zu den Items im Automaten selber. Der Geldbetrag wird auch jedesmal korrekt angezeigt und ist auch auf zwei Dezimal eingestellt um es autherntischer wirken zu lassen.
+
+Die Items im Automaten sind haben alle Farben, um es mehr aus dem Automaten stechen zu lassen.
 
 <img width="800" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/6990e86c-2342-4f6d-af7e-0fb170577c4f">
 
 #### printAutomatWithPrice();
+Bei dieser Version des print Automaten haben wir uns entschieden die Details unserer Produkte auf dem Bildschirm des Automaten anzuzeigen. Da die Länge der Namen der Items alle verschieden sind, verschiebte sich unsere ASCII Art ständig. Wir suchten im Internet nach Lösungen und fanden schlussendlich auf ChatGPT fündig. Es hat uns empfohlen bevor wir den Automaten printen, die Länge der Zeichen des Produkt Namen zu kontrollieren. Falls dieser so gross wie der Platz den wir für den Produkt Namen befüllt, macht es keine Veränderung, jedoch wenn dieser kürzer ist, gibt es dem Namen eine Art Padding auf beiden Seiten, so dass es denn Platz immernoch auffüllt. 
+
+Es zeigt auch auf dem Bildschirm des Automaten, den Preis des Produktes.
+
 
 <img wodth="300" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/ec53482f-b724-490f-b97e-d8c375445de6">
 
