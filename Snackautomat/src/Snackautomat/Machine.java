@@ -96,12 +96,13 @@ public class Machine {
 
        do {
            printMachine();
+           System.out.println("Enter Code:");
 
            String inputItemPos = scan.nextLine().toLowerCase();  //have to enter twice
            scan.nextLine();
            error = true;
            if (secretKey.equals(inputItemPos)) {
-                //secretKeyFunction();
+                secretKeyFunction();
            }else {
                switch (inputItemPos){
                    case "a1":{
@@ -215,38 +216,257 @@ public class Machine {
 
 
     public void secretKeyFunction() {
-        Scanner scanner = new Scanner(System.in);
-        boolean error = true;
+        String inputCode;
         boolean repeat = true;
 
+
         do {
+            boolean error;
             do {
+                printMachine();
+
                 System.out.println("You got the " + yellow + "SECRET KEY!!" + reset);
                 System.out.println("What do you want to do?");
                 System.out.println("Which item do you want to edit? ");
 
                 System.out.println("1. Restock item\n2. Change Price\n3. Replace item\n4. Cancel");
 
-                String inputSecretKeyChoice = scanner.nextLine().toLowerCase();
+                String inputSecretKeyChoice = scan.nextLine().toLowerCase();
+                error = false;
 
-                if (inputSecretKeyChoice.equals("1") || inputSecretKeyChoice.equals("1.") || inputSecretKeyChoice.equals("restock item")) {
+                if (inputSecretKeyChoice.equals("1") || inputSecretKeyChoice.equals("restock item")) {
                     error = false;
+
+
+                    System.out.println("Enter Code");
+                    inputCode = scan.nextLine();
+
+
+                    switch (inputCode.toLowerCase()) {
+                        case "a1": {
+                            restockItem(a1);
+                            break;
+                        }
+                        case "a2": {
+                            restockItem(a2);
+                            break;
+                        }
+                        case "a3": {
+                            restockItem(a3);
+                            break;
+                        }
+                        case "a4": {
+                            restockItem(a4);
+                            break;
+                        }
+                        case "b1": {
+                            restockItem(b1);
+                            break;
+                        }
+                        case "b2": {
+                            restockItem(b2);
+                            break;
+                        }
+                        case "b3": {
+                            restockItem(b3);
+                            break;
+                        }
+                        case "b4": {
+                            restockItem(b4);
+                            break;
+                        }
+                        case "c1": {
+                            restockItem(c1);
+                            break;
+                        }
+                        case "c2": {
+                            restockItem(c2);
+                            break;
+                        }
+                        case "c3": {
+                            restockItem(c3);
+                            break;
+                        }
+                        case "c4": {
+                            restockItem(c4);
+                            break;
+                        }
+                        case "d1": {
+                            restockItem(d1);
+                            break;
+                        }
+                        case "d2": {
+                            restockItem(d2);
+                            break;
+                        }
+                        case "d3": {
+                            restockItem(d3);
+                            break;
+                        }
+                        case "d4": {
+                            restockItem(d4);
+                            break;
+                        }
+                    }
                     //  restockItem();
-                } else if (inputSecretKeyChoice.equals("2") || inputSecretKeyChoice.equals("2.") || inputSecretKeyChoice.equals("change price")) {
+                } else if (inputSecretKeyChoice.equals("2") || inputSecretKeyChoice.equals("change price")) {
                     error = false;
-                    changePrice(a1);
-                } else if (inputSecretKeyChoice.equals("3") || inputSecretKeyChoice.equals("3.") || inputSecretKeyChoice.equals("replace item")) {
+
+                    System.out.println("Enter Code");
+                    inputCode = scan.nextLine();
+
+                    switch (inputCode.toLowerCase()) {
+                        case "a1": {
+                            changePrice(a1);
+                            break;
+                        }
+                        case "a2": {
+                            changePrice(a2);
+                            break;
+                        }
+                        case "a3": {
+                            changePrice(a3);
+                            break;
+                        }
+                        case "a4": {
+                            changePrice(a4);
+                            break;
+                        }
+                        case "b1": {
+                            changePrice(b1);
+                            break;
+                        }
+                        case "b2": {
+                            changePrice(b2);
+                            break;
+                        }
+                        case "b3": {
+                            changePrice(b3);
+                            break;
+                        }
+                        case "b4": {
+                            changePrice(b4);
+                            break;
+                        }
+                        case "c1": {
+                            changePrice(c1);
+                            break;
+                        }
+                        case "c2": {
+                            changePrice(c2);
+                            break;
+                        }
+                        case "c3": {
+                            changePrice(c3);
+                            break;
+                        }
+                        case "c4": {
+                            changePrice(c4);
+                            break;
+                        }
+                        case "d1": {
+                            changePrice(d1);
+                            break;
+                        }
+                        case "d2": {
+                            changePrice(d2);
+                            break;
+                        }
+                        case "d3": {
+                            changePrice(d3);
+                            break;
+                        }
+                        case "d4": {
+                            changePrice(d4);
+                            break;
+                        } default:
+                    }
+
+                } else if (inputSecretKeyChoice.equals("3") || inputSecretKeyChoice.equals("replace item")) {
                     error = false;
-                    replaceItem(a1);
+
+                    System.out.println("Enter Code");
+                    inputCode = scan.nextLine();
+
+                    switch (inputCode.toLowerCase()) {
+                        case "a1": {
+                            replaceItem(a1);
+                            break;
+                        }
+                        case "a2": {
+                            replaceItem(a2);
+                            break;
+                        }
+                        case "a3": {
+                            replaceItem(a3);
+                            break;
+                        }
+                        case "a4": {
+                            replaceItem(a4);
+                            break;
+                        }
+                        case "b1": {
+                            replaceItem(b1);
+                            break;
+                        }
+                        case "b2": {
+                            replaceItem(b2);
+                            break;
+                        }
+                        case "b3": {
+                            replaceItem(b3);
+                            break;
+                        }
+                        case "b4": {
+                            replaceItem(b4);
+                            break;
+                        }
+                        case "c1": {
+                            replaceItem(c1);
+                            break;
+                        }
+                        case "c2": {
+                            replaceItem(c2);
+                            break;
+                        }
+                        case "c3": {
+                            replaceItem(c3);
+                            break;
+                        }
+                        case "c4": {
+                            changePrice(c4);
+                            break;
+                        }
+                        case "d1": {
+                            changePrice(d1);
+                            break;
+                        }
+                        case "d2": {
+                            changePrice(d2);
+                            break;
+                        }
+                        case "d3": {
+                            changePrice(d3);
+                            break;
+                        }
+                        case "d4": {
+                            changePrice(d4);
+                            break;
+                        }
+                    }
+
+
                 } else if (inputSecretKeyChoice.equals("4") || inputSecretKeyChoice.equals("4.") || inputSecretKeyChoice.equals("cancel")) {
                     error = false;
                 } else {
                     System.out.println("Invalid Input");
+                    error = true;
                 }
             } while (error);
 
             System.out.println("Do you want to make more changes? (Y/N)");
-            char inputRepeat = scanner.next().charAt(0);
+            char inputRepeat = scan.next().charAt(0);
+            scan.nextLine();
 
             if(inputRepeat == 'n' || inputRepeat == 'N'){
                 repeat = false;
@@ -285,7 +505,7 @@ public class Machine {
 
         item.setPrice(newPrice);
 
-        System.out.println("The new Price is" + item.getPrice());
+        System.out.println("The new Price is " + String.format("%.2f", item.getPrice()));
     }
 
 
