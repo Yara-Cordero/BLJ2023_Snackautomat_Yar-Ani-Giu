@@ -150,8 +150,7 @@ Alles in allem ist uns dieses Projekt ziemlich gut gelungen. Wir haben ein Funkt
 
 
 #### Yara
-
-
+Meiner Meinung nach ging das Projekt wie wir uns es vorgestellt hatten. Leider war am Anfang des Projektes Giulia noch krank, und konnte nicht mit uns planen. Jedoch fand ich das wir sie immernoch gut in das Projekt integrieren konnten. Unsere Planung half uns beim Projekt sehr, da wir konkrete Erwartungen hatten und wussten was es alles brauchte um diese zu erfüllen. Manchmal hatten wir paar Hiccups und mussten uns zusammen tun, um Lösungen dazu zu finden. Ich fand das an unserem Projekt besonders gut, weil wir nie ganz alleine am Projekt arbeiteten. Rest des Projektes hatten wir manchmal vergessen die Veränderunge zu fetchen, und mussten unsere Variation des Codes seperat Kopieren und danach einsetzten und dann Commiten und Pushen.
 
 
 #### Giulia
