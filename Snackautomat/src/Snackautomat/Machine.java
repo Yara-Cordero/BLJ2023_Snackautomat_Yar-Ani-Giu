@@ -6,7 +6,7 @@ public class Machine {
 
     private double money;
     private final String secretKey = "secret key";
-    public final static void clearConsole()
+    public static void clearConsole()
     {
         try
         {
@@ -80,7 +80,7 @@ public class Machine {
        do{
            try{
                System.out.println("How much money do you have on you?");
-               money = scan.nextDouble(); //work
+               money = scan.nextDouble();
                scan.nextLine();
                error = false;
 
@@ -96,13 +96,15 @@ public class Machine {
            printMachine();
            System.out.println("Enter Code:");
 
-           String inputItemPos = scan.nextLine().toLowerCase();  //have to enter twice
+           String inputItemPos = scan.nextLine();  //have to enter twice
            scan.nextLine();
-           error = true;
-           if (secretKey.equals(inputItemPos)) {
+
+           error = false;
+
+           if (secretKey.equalsIgnoreCase(inputItemPos)) {
                 secretKeyFunction();
            }else {
-               switch (inputItemPos){
+               switch (inputItemPos.toLowerCase()){
                    case "a1":{
                        purchaseItem(a1, getMoney());
                        break;
@@ -151,18 +153,18 @@ public class Machine {
                    }case "d4":{
                        purchaseItem(d4, getMoney());
                        break;
-                   } default:{
-                       System.out.println("Enter a valid Input");
                    }
-
                }
 
            }
 
            error = true;
+
            do {
                System.out.println("Do you want to buy more things? (Y/N)");
                decisionRepeat = scan.next().charAt(0);
+               scan.nextLine();
+
                if (decisionRepeat == 'y' ||decisionRepeat == 'Y' ||decisionRepeat == 'n' || decisionRepeat == 'N') {
                    error = false;
                }
@@ -428,7 +430,7 @@ public class Machine {
                 }
             } while (error);
 
-            System.out.println("Do you want to make more changes? (Y/N)");
+            System.out.println("Do you want to make more " + red + "CHANGES?" + reset + "(Y/N)");
             char inputRepeat = scan.next().charAt(0);
             scan.nextLine();
 
@@ -476,11 +478,11 @@ public class Machine {
         System.out.println("Do you want to set the item to max(15) or default amount(10)");
         String restockChoice = scan.next();
 
-        if(restockChoice == "max" || restockChoice == "15") {
+        if(restockChoice.equals("max") || restockChoice.equals("15")) {
             int calcMaxAmount = 15 - item.getAmount();
             item.setAmount(item.getAmount() + calcMaxAmount);
             System.out.println(item.getNameOfTheProduct() + "has now been restocked to " + item.getAmount() + "items");
-        } else if (restockChoice == "default" || restockChoice == "10") {
+        } else if (restockChoice.equals("default") || restockChoice.equals("10")) {
             if(item.getAmount() == 10) {
                 double calcDefAmount = 10 - item.getAmount();
                 item.setPrice(item.getAmount() + calcDefAmount);
@@ -604,9 +606,6 @@ public class Machine {
         String itemName = item.getNameOfTheProduct();
 
         int maxNameLength = 10;
-        //if maltesers this not work
-        //this works with short names
-        //we have to adjust to names for space
 
         if (itemName.length() > maxNameLength) {
             itemName = itemName.substring(0, maxNameLength);
