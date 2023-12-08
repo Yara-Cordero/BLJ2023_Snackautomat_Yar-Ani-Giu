@@ -77,7 +77,7 @@ public class Machine {
        boolean error = true;
        printMachine();
 
-       do{
+       do{ //fallback not working
            try{
                System.out.println("How much money do you have on you?");
                money = scan.nextDouble();
@@ -96,8 +96,8 @@ public class Machine {
            printMachine();
            System.out.println("Enter Code:");
 
-           String inputItemPos = scan.nextLine();  //have to enter twice
-           scan.nextLine();
+           String inputItemPos = scan.nextLine();  //goes straight to want to buy again
+           scan.nextLine(); //have to enter twice
 
            error = false;
 
@@ -161,7 +161,7 @@ public class Machine {
            error = true;
 
            do {
-               System.out.println("Do you want to buy more things? (Y/N)");
+               System.out.println("Do you want to " + red +"BUY" + reset + " more things? (Y/N)");
                decisionRepeat = scan.next().charAt(0);
                scan.nextLine();
 
@@ -171,7 +171,7 @@ public class Machine {
            }while (error);
 
            if(decisionRepeat == 'n' || decisionRepeat == 'N') {
-               System.out.println("Thank you for using this ultimate awesome vending machine!!");
+               System.out.println("\nThank you for using this ultimate awesome vending machine!!");
                System.out.println("SEE YOU NEXT TIME :) ");
                System.out.println("- Yara, Anik & Giulia ");
                System.exit(0);
@@ -193,7 +193,6 @@ public class Machine {
 
                 System.out.println("You got the " + yellow + "SECRET KEY!!" + reset);
                 System.out.println("What do you want to do?");
-                System.out.println("Which item do you want to edit? ");
 
                 System.out.println("1. Restock item\n2. Change Price\n3. Replace item\n4. Cancel");
 
@@ -400,23 +399,23 @@ public class Machine {
                             break;
                         }
                         case "c4": {
-                            changePrice(c4);
+                            replaceItem(c4);
                             break;
                         }
                         case "d1": {
-                            changePrice(d1);
+                            replaceItem(d1);
                             break;
                         }
                         case "d2": {
-                            changePrice(d2);
+                            replaceItem(d2);
                             break;
                         }
                         case "d3": {
-                            changePrice(d3);
+                            replaceItem(d3);
                             break;
                         }
                         case "d4": {
-                            changePrice(d4);
+                            replaceItem(d4);
                             break;
                         }
                     }
@@ -481,12 +480,12 @@ public class Machine {
         if(restockChoice.equals("max") || restockChoice.equals("15")) {
             int calcMaxAmount = 15 - item.getAmount();
             item.setAmount(item.getAmount() + calcMaxAmount);
-            System.out.println(item.getNameOfTheProduct() + "has now been restocked to " + item.getAmount() + "items");
+            System.out.println(item.getNameOfTheProduct() + " has now been restocked to " + item.getAmount() + " items");
         } else if (restockChoice.equals("default") || restockChoice.equals("10")) {
             if(item.getAmount() == 10) {
                 double calcDefAmount = 10 - item.getAmount();
                 item.setPrice(item.getAmount() + calcDefAmount);
-                System.out.println(item.getNameOfTheProduct() + "has now been restocked to " + item.getAmount() + "items");
+                System.out.println(item.getNameOfTheProduct() + " has now been restocked to " + item.getAmount() + " items");
             } else {
                 System.out.println("There are already 10");
             }
@@ -554,7 +553,7 @@ public class Machine {
                 System.out.println("Invalid input");
             }
         }
-
+        //if else statement needed
         System.out.println("Your item has been replaced with " + item.getNameOfTheProduct());
 
     }
