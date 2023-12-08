@@ -11,7 +11,6 @@ Wir haben uns zuerst das Aufgabenblatt gründlich durchgelesen, um uns ein Bild 
 - Teams für Kommunikation
 
 <br>
-
 # Planen
 Wir haben uns aufgezeichnet wie unser Snack Automat aussehen soll und aufgeschrieben was für Funktionen enthalten sein müssen. Dann haben wir uns zwölf Items die wir zuvor aufgeschrieben haben ausgewählt, die wir gerne in unserem Automaten haben möchten. Wir haben auch noch Vier Items dazu ausgesucht die wir mit einem bereits bestehnedem Item ersetzen können und zwar mit dem sogenannten Secret Key.
 
