@@ -154,3 +154,6 @@ Meiner Meinung nach ging das Projekt wie wir uns es vorgestellt hatten. Leider w
 
 
 #### Giulia
+Da ich krank war hatte ich zuerst Mühe in das Projekt herein zu kommen. Jedoch verstand ich das meiste nachdem ich den Code studierte und Yara und Anik mir noch einige Sachen erklärten. 
+Was ich sehr gut fand war die Kommunikation. Wir besprachen alles miteinander und informierten einander auch immer wer in welchem File arbeitete um Merge Konflikte möglichst gut zu vermeiden. Es gab einige Sachen die ich anderst implementiert hätte jedoch war es ein gutes Projekt und auch wenn es noch einige Bugs gibt denke ich dass wir alle zufrieden mit dem Produkt sind. 
+
