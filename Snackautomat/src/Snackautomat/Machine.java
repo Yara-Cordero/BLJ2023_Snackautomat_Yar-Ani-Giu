@@ -6,52 +6,32 @@ public class Machine {
 
     private double money;
     private final String secretKey = "secret key";
-    public static void clearConsole()
-    {
-        try
-        {
-            final String os = System.getProperty("os.name");
 
-            if (os.contains("Windows"))
-            {
-                Runtime.getRuntime().exec("cls");
-            }
-            else
-            {
-                Runtime.getRuntime().exec("clear");
-            }
-        }
-        catch (final Exception e)
-        {
-            //  Handle any exceptions.
-        }
-    }
-
-    Item a1 = new Item(3.50, "Maltesers", 10, false);
-    Item a2 = new Item(2.50, "M&M", 10, false);
-    Item a3 = new Item(3.0, "Snickers", 10, false);
-    Item a4 = new Item(2.90, "Twix", 10, false);
-    Item b1 = new Item(4.20, "P. Chips", 10, false);
-    Item b2 = new Item(4.80, "Haribo", 10, false);
-    Item b3 = new Item(2.0, "Kaugummi", 10, false);
+    Item a1 = new Item(3.5, "Maltesers", 10, false);
+    Item a2 = new Item(2.5, "M&M", 10, false);
+    Item a3 = new Item(3, "Snickers", 10, false);
+    Item a4 = new Item(2.9, "Twix", 10, false);
+    Item b1 = new Item(4.2, "P. Chips", 10, false);
+    Item b2 = new Item(4.8, "Haribo", 10, false);
+    Item b3 = new Item(2, "Kaugummi", 10, false);
     Item b4 = new Item(3.75, "Oreos", 10, false);
     Item c1 = new Item(4.95, "Blue Takis", 10, false);
-    Item c2 = new Item(2.30, "Balisto", 10, false);
-    Item c3 = new Item(4.20, "N. Chips", 10, false);
+    Item c2 = new Item(2.3, "Balisto", 10, false);
+    Item c3 = new Item(4.2, "N. Chips", 10, false);
     Item c4 = new Item(4.95, "Red Takis", 10, false);
-    Item d1 = new Item(3.80, "Cola", 10, true);
+    Item d1 = new Item(3.8, "Cola", 10, true);
     Item d2 = new Item(1.75, "Wasser (Still)", 10, true);
-    Item d3 = new Item(1.50, "Capri Sun", 10, true);
-    Item d4 = new Item(3.80, "Fanta", 10, true);
+    Item d3 = new Item(1.5, "Capri Sun", 10, true);
+    Item d4 = new Item(3.8, "Fanta", 10, true);
 
-    Item extra1 = new Item(5.0, "Lighter",10,false);
-    Item extra2 = new Item(20.0,"Pregnancy test",10,false);
-    Item extra3 = new Item(3.0,"Papes",10,false);
-    Item extra4 = new Item(14.0,"Vape", 10,false);
-    Item extra5 = new Item(20.0, "Powerbank", 10, false);
-    Item extra6 = new Item(6.50, "Condoms", 10, false);
-    Item extra7 = new Item(2.50, "Red Bull", 10, true);
-    Item extra8 = new Item(3.40, "Ice Tea", 10, true);
+    Item extra1 = new Item(5, "Lighter",10,false);
+    Item extra2 = new Item(20,"Pregnancy test",10,false);
+    Item extra3 = new Item(3,"Papes",10,false);
+    Item extra4 = new Item(14,"Vape", 10,false);
+    Item extra5 = new Item(20, "Powerbank", 10, false);
+    Item extra6 = new Item(6.5, "Condoms", 10, false);
+    Item extra7 = new Item(2.5, "Red Bull", 10, true);
+    Item extra8 = new Item(3.4, "Ice Tea", 10, true);
 
 
     public Machine() {
@@ -77,20 +57,15 @@ public class Machine {
        boolean error = true;
        printMachine();
 
-       do{ //fallback not working
-           try{
-               System.out.println("How much money do you have on you?");
-               money = scan.nextDouble();
-               scan.nextLine();
-               error = false;
-
-           }catch (Exception e){
-               System.out.println("Enter valid input");
-               scan.nextLine();
-           }
-
-       }while(error);
-
+        while(true) {
+            System.out.println("How much money do you have on you?");
+            try {
+                money = Double.parseDouble(scan.next());
+                break;
+            } catch (NumberFormatException ignore) {
+                System.out.println("Enter a valid number");
+            }
+        }
        setMoney(money);
 
        do {
@@ -498,8 +473,16 @@ public class Machine {
 
     private void changePrice(Item item) {
 
-        System.out.println("What do you want to change the price to?");
-        double newPrice = scan.nextDouble();
+        double newPrice;
+        while(true) {
+            System.out.println("What do you want to change the price to?");
+            try {
+                newPrice = Double.parseDouble(scan.next());
+                break;
+            } catch (NumberFormatException ignore) {
+                System.out.println("Enter valid number");
+            }
+        }
 
         item.setPrice(newPrice);
 
@@ -571,7 +554,7 @@ public class Machine {
 
 
     private void printMachine() {
-        clearConsole();
+
         String formattedMoney = String.format("%.2f", money);
         System.out.println(
                         "\n                                                        ░██████████████████████████████████████████████████████████████░                                                        \n" +
@@ -611,7 +594,7 @@ public class Machine {
     }
 
     private void printMachineWithPrice(Item item) {
-        clearConsole();
+
         String formattedMoney = String.format("%.2f", money);
         String itemPrice = String.format("%.2f", item.getPrice());
         String itemName = item.getNameOfTheProduct();
