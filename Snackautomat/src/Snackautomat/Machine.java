@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Machine {
 
-    private final int MAX_AMOUNT = 15;
     private double money;
     private final String secretKey = "secret key";
     public final static void clearConsole()
@@ -27,7 +26,6 @@ public class Machine {
             //  Handle any exceptions.
         }
     }
-    private String[][] vendigItems = new String[4][4];
 
     Item a1 = new Item(3.50, "Maltesers", 10, false);
     Item a2 = new Item(2.50, "M&M", 10, false);
@@ -181,41 +179,7 @@ public class Machine {
 
     }
 
-    private void purchaseItem(Item item, double money){
-        this.money = money;
-        String inputChoice;
-        boolean error = true;
-
-        System.out.println("You selected " + item.getNameOfTheProduct() + "\n\n");
-        printMachineWithPrice(item);
-
-        do {
-            System.out.println("What do you want to do?");
-            System.out.println("1. Buy\n2. Cancel");
-            inputChoice = scan.nextLine().toLowerCase();
-            scan.nextLine();
-            if (inputChoice.equals("1") || inputChoice.equals("1.") || inputChoice.equals("buy")) {
-                error = false;
-
-                if (item.getPrice() > money) {
-                    System.out.println("You don't have enough money to buy this item!");
-                } else {
-                    item.setAmount(item.getAmount() - 1);
-                    setMoney((getMoney() - item.getPrice()));
-                    printMachine();
-                    System.out.println(item.getNameOfTheProduct() + " WAS PURCHASED!!");
-                }
-            } else if (inputChoice.equals("2") || inputChoice.equals("2.") || inputChoice.equals("cancel")) {
-                error = false;
-                break;
-            }else {
-                System.out.println("Enter a valid Input");
-            }
-        }while (error);
-    }
-
-
-    public void secretKeyFunction() {
+    private void secretKeyFunction() {
         String inputCode;
         boolean repeat = true;
 
@@ -475,6 +439,38 @@ public class Machine {
 
     }
 
+    private void purchaseItem(Item item, double money){
+        this.money = money;
+        String inputChoice;
+        boolean error = true;
+
+        System.out.println("You selected " + item.getNameOfTheProduct() + "\n\n");
+        printMachineWithPrice(item);
+
+        do {
+            System.out.println("What do you want to do?");
+            System.out.println("1. Buy\n2. Cancel");
+            inputChoice = scan.nextLine().toLowerCase();
+            scan.nextLine();
+            if (inputChoice.equals("1") || inputChoice.equals("1.") || inputChoice.equals("buy")) {
+                error = false;
+
+                if (item.getPrice() > money) {
+                    System.out.println("You don't have enough money to buy this item!");
+                } else {
+                    item.setAmount(item.getAmount() - 1);
+                    setMoney((getMoney() - item.getPrice()));
+                    printMachine();
+                    System.out.println(item.getNameOfTheProduct() + " WAS PURCHASED!!");
+                }
+            } else if (inputChoice.equals("2") || inputChoice.equals("2.") || inputChoice.equals("cancel")) {
+                error = false;
+                break;
+            }else {
+                System.out.println("Enter a valid Input");
+            }
+        }while (error);
+    }
 
     private void restockItem(Item item) {
         System.out.println("Do you want to set the item to max(15) or default amount(10)");
@@ -561,7 +557,7 @@ public class Machine {
 
     }
 
-    void printMachine() {
+    private void printMachine() {
         clearConsole();
         String formattedMoney = String.format("%.2f", money);
         System.out.println(
@@ -601,7 +597,7 @@ public class Machine {
 
     }
 
-    void printMachineWithPrice(Item item) {
+    private void printMachineWithPrice(Item item) {
         clearConsole();
         String formattedMoney = String.format("%.2f", money);
         String itemPrice = String.format("%.2f", item.getPrice());
