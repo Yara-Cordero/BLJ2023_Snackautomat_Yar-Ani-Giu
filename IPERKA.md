@@ -90,7 +90,11 @@ Wir erstellten unsere verschieden Files.
   - String nameOfTheProduct
   - int amount
 
-Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser auch deine Geld Summe und den Preis und Name eines Gegenstandes printed. Wir färbten auch die verschiedenen Items ein um das Aussehen des Automates zu verschönern.
+Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser auch eine Geld Summe und den Preis und Name eines Gegenstandes printed. Wir färbten auch die verschiedenen Items ein um das Aussehen des Automates zu verschönern.
+
+
 # Kontrollieren
+
+Wir haben unser Code mehr oder weniger fertiggestellt und kontrolliert, wobei uns ein paar Fehler aufgefallen sind die wir noch beheben müssen. Was noch ein Problem ist, ist das wenn man ein Objekt kauft und dann nochmals eins Kaufen möchte dies noch nicht so ganz funktioniert wie wir uns das vorgestellt haben. Ein weiters noch bestehendes Problem ist der secret key. Es funktionieren noch nicht alle funktionen im secret key wie sie Funktionieren sollten. Es gibt aber auch noch sehr kleine Probleme die im Code noch behoben werden müssen.
 
 # Auswerten
