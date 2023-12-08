@@ -86,6 +86,7 @@ public class Machine {
 
            }catch (Exception e){
                System.out.println("Enter valid input");
+               scan.nextLine();
            }
 
        }while(error);
