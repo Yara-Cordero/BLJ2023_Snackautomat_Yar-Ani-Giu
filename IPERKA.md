@@ -62,7 +62,7 @@ Als wir uns dann für diesen Automaten entschieden, mussten wir uns überlegen w
 
 <img width="700" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/98eb47e7-541a-4270-9365-faa3f5d79aa3">
 
-Beim Realisieren hatten wir uns auch entschieden, dass wenn du den secret Key hattest, die Items restocken, den Name verändern und den Preis ändern konntest. 
+Beim Realisieren hatten wir uns auch entschieden, dass wenn du den secret Key hattest, die Items restocken, austauschen und den Preis ändern konntest. 
 
 
 # Realisieren
@@ -72,24 +72,36 @@ unsere Laptops gecloned.
 
 Wir erstellten unsere verschieden Files.
 
-- Main.java
-(Hier wird nur die start Funktion aufgerufen)
+## Main.java
+Hier wird nur die start Funktion aufgerufen in der alle Funktionen bereits zu einem Programm zusammenhefügt wurden. 
 
-- Machine.java 
+## Machine.java 
 (Hier werden alle Funktionen erstellt)
-  - start();
-  - secretKey();
-  - purchaseItem();
-  - printAutomat();
-  - printAutomatWithPrice();
-  - restock();
-  - changePrice();
+Diese haben wir hier in der Dokumentation in zwei Teile unterteilt um das Verständnis zu vereinfachen. 
 
-- Item.java
+### start();
+In der Start Funktion sind alle Funktionen zu einem Programm zusammengfrügt. Dabei haben wir zwischen den Basic Funktionen und den Secret Key unterschieden. die normalen Funktionen sind ohne den secret key zugänglich und sind dazu um Produkte zu kaufen und den Automat auszugeben. 
+Auch haben wir hier einige Items definiert. Zu beginn hatten wir 16 verschiedene Produkte. Wir beschlossn uns jedoch dann einige extras hinzuzufügen um mehr 
+Möglichkeiten beim austauschen der Produkte zu haben. 
+Für den Benutzer ohne den Secret Key sind jedoch nur die Produkte käuflich die in der Maschine sind. 
+
+#### purchaseItem();
+#### printAutomat();
+#### printAutomatWithPrice();
+  
+### secretKey();
+#### restock();
+#### changePrice();
+#### replaceItem();
+
+## Item.java
+Hier haben wir die 
 (Hier wurden die Attribute von unsere Items erfasst)
   - double price
   - String nameOfTheProduct
   - int amount
+
+
 
 Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser auch eine Geld Summe und den Preis und Name eines Gegenstandes printed. Wir färbten auch die verschiedenen Items ein um das Aussehen des Automates zu verschönern.
 
@@ -97,6 +109,7 @@ Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser au
 # Kontrollieren
 
 Wir haben unser Code mehr oder weniger fertiggestellt und kontrolliert, wobei uns ein paar Fehler aufgefallen sind die wir noch beheben müssen. Was noch ein Problem ist, ist das wenn man ein Objekt kauft und dann nochmals eins Kaufen möchte dies noch nicht so ganz funktioniert wie wir uns das vorgestellt haben. Ein weiters noch bestehendes Problem ist der secret key. Es funktionieren noch nicht alle funktionen im secret key wie sie Funktionieren sollten. Es gibt aber auch noch sehr kleine Probleme die im Code noch behoben werden müssen.
+Die Funktionen die im Secret Key beinhaltet sind sollten funktionieren jedoch gibt es ein Fehler bei der Funktion selbst die sie alle zu einem Programm macht. 
 
 ## Bugs
 - SecretKey Function
