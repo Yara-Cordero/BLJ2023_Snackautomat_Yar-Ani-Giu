@@ -4,6 +4,6 @@
 - [Informieren](IPERKA.md#informieren)
 - [Plannen](IPERKA.md#planen)
 - [Entscheiden](IPERKA.md#entscheiden)
-- [Realisieren](IPERKA.md#realisieren)
+- [Realisieren](IPERKA.md#Realisieren)
 - [Kontrollieren](IPERKA.md#kontrollieren)
 - [Auswerten](IPERKA.md#auswerten)
