@@ -58,8 +58,11 @@ Beim Realisieren hatten wir uns auch entschieden, dass wenn du den secret Key ha
 
 # Realisieren
 
+
 Das erste das wir beim Realisieren angingen war, dass wir unser GitHub Repo erstellten. Danach hatten wir die Repo auf 
 unsere Laptops gecloned und erstellten unsere verschiedenen Files:
+
+Als wir mit dem Programmieren begannen, traten Konflikte in unserem Repository auf. Sobald wir das bemerkten, holten wir uns Hilfe von unseren Ausbildern.
 
 ## Main.java
 Hier wird nur die start Funktion aufgerufen in der alle Funktionen bereits zu einem Programm zusammenhefügt wurden. 
@@ -146,12 +149,10 @@ Die Funktionen die im Secret Key beinhaltet sind sollten funktionieren jedoch gi
 # Auswerten
 
 #### Anik
-Alles in allem ist uns dieses Projekt ziemlich gut gelungen. Wir haben ein Funktionierendes End-Resultat mit den Features, die wir von Anfang an drin haben wollten. Unsere Zusammenarbeit war sehr harmonisch wir haben uns gegenseitig geholfen und uns immer ausgetauscht. Am Anfang war Giulia krank und dessahlb mussten Yara und ich den Anfang des Projekts alleine machen und Planen. ALs Giulia dann wieder gesund war haben wir, ihr unsere Ideen und Gedankengänge erklärt und den Code, den wir bis da hatten gezeigt. Wir haben die noch übrigen Features aufgeteilt, so dass jeder noch etwas zu coden hat. Was auch noch sehr gut funktioniert hat, sind die zuverlässigen und regelmässigen commits und updates des Codes.
+Alles in allem ist uns dieses Projekt ziemlich gut gelungen. Wir haben ein Funktionierendes End-Resultat mit den Features, die wir von Anfang an drin haben wollten. Unsere Zusammenarbeit war sehr harmonisch wir haben uns gegenseitig geholfen und uns immer ausgetauscht. Am Anfang war Giulia krank und dessahlb mussten Yara und ich den Anfang des Projekts alleine machen und Planen. Als Giulia dann wieder gesund war haben wir, ihr unsere Ideen und Gedankengänge erklärt und den Code, den wir bis da hatten gezeigt. Wir haben die noch übrigen Features aufgeteilt, so dass jeder noch etwas zu coden hat. Was auch noch sehr gut funktioniert hat, sind die zuverlässigen und regelmässigen commits und updates des Codes.
 
 
 #### Yara
-
-
-
+Meiner Meinung nach ging das Projekt wie wir uns es vorgestellt hatten. Leider war am Anfang des Projektes Giulia noch krank, und konnte nicht mit uns planen. Jedoch fand ich das wir sie immernoch gut in das Projekt integrieren konnten. Unsere Planung half uns beim Projekt sehr, da wir konkrete Erwartungen hatten und wussten was es alles brauchte um diese zu erfüllen. Manchmal hatten wir paar Hiccups und mussten uns zusammen tun, um Lösungen dazu zu finden. Ich fand das an unserem Projekt besonders gut, weil wir nie ganz alleine am Projekt arbeiteten. Rest des Projektes hatten wir manchmal vergessen die Veränderunge zu fetchen und mussten unsere Variation des Codes seperat Kopieren und danach einsetzten und dann Commiten und Pushen. 
 
 #### Giulia
