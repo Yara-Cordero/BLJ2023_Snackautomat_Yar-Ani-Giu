@@ -505,7 +505,6 @@ public class Machine {
         System.out.println("The new Price is " + String.format("%.2f", item.getPrice()));
     }
 
-
     private void replaceItem(Item item) {
 
         System.out.println("With which item do you want to replace " + item.getNameOfTheProduct() + "\n" +
@@ -515,48 +514,60 @@ public class Machine {
                 "4. " + extra4.getNameOfTheProduct() + "\t" + "8. " + extra8.getNameOfTheProduct() + "\n");
 
         int replaceItem = scan.nextInt();
-        Item temp = item;
-        switch (replaceItem) {
-            case 1: {
-                item = extra1;
-                extra1 = temp;
-                break;
-            } case 2: {
-                item = extra2;
-                extra2 = temp;
-                break;
-            } case 3: {
-                item = extra3;
-                extra3 = temp;
-                break;
-            } case 4: {
-                item = extra4;
-                extra6 = temp;
-                break;
-            } case 5: {
-                item = extra5;
-                extra5 = temp;
-                break;
-            } case 6: {
-                item = extra6;
-                extra6 = temp;
-                break;
-            } case 7: {
-                item = extra7;
-                extra7 = temp;
-                break;
-            } case 8: {
-                item = extra8;
-                extra8 = temp;
-                break;
-            } default: {
-                System.out.println("Invalid input");
+        Item temp = new Item(item.getPrice(), item.getNameOfTheProduct(), item.getAmount(), item.isDrink());
+        if(replaceItem < 9 && replaceItem > 0) {
+            switch (replaceItem) {
+                case 1: {
+                    swapProduct(item, temp, extra1);
+                    break;
+                }
+                case 2: {
+                    swapProduct(item, temp, extra2);
+                    break;
+                }
+                case 3: {
+                    swapProduct(item, temp, extra3);
+                    break;
+                }
+                case 4: {
+                    swapProduct(item, temp, extra4);
+                    break;
+                }
+                case 5: {
+                    swapProduct(item, temp, extra5);
+                    break;
+                }
+                case 6: {
+                    swapProduct(item, temp, extra6);
+                    break;
+                }
+                case 7: {
+                    swapProduct(item, temp, extra7);
+                    break;
+                }
+                case 8: {
+                    swapProduct(item, temp, extra8);
+                    break;
+                }
             }
+            System.out.println("Your item has been replaced with " + item.getNameOfTheProduct());
+        } else {
+            System.out.println("Invalid input");
         }
-        //if else statement needed
-        System.out.println("Your item has been replaced with " + item.getNameOfTheProduct());
-
     }
+    private void swapProduct(Item item, Item temp, Item extra) {
+        item.setNameOfTheProduct(extra.getNameOfTheProduct());
+        item.setDrink(extra.isDrink());
+        item.setAmount(extra.getAmount());
+        item.setPrice(extra.getPrice());
+
+        extra.setAmount(temp.getAmount());
+        extra.setPrice(temp.getPrice());
+        extra.setNameOfTheProduct(temp.getNameOfTheProduct());
+        extra.setDrink(temp.isDrink());
+        return;
+    }
+
 
     private void printMachine() {
         clearConsole();
