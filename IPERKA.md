@@ -145,13 +145,13 @@ Die Funktionen die im Secret Key beinhaltet sind sollten funktionieren jedoch gi
 
 # Auswerten
 
-##### Anik
+#### Anik
 Alles in allem ist uns dieses Projekt ziemlich gut gelungen. Wir haben ein Funktionierendes End-Resultat mit den Features, die wir von Anfang an drin haben wollten. Unsere Zusammenarbeit war sehr harmonisch wir haben uns gegenseitig geholfen und uns immer ausgetauscht. Am Anfang war Giulia krank und dessahlb mussten Yara und ich den Anfang des Projekts alleine machen und Planen. ALs Giulia dann wieder gesund war haben wir, ihr unsere Ideen und Gedankengänge erklärt und den Code, den wir bis da hatten gezeigt. Wir haben die noch übrigen Features aufgeteilt, so dass jeder noch etwas zu coden hat. Was auch noch sehr gut funktioniert hat, sind die zuverlässigen und regelmässigen commits und updates des Codes.
 
 
-##### Yara
+#### Yara
 
 
 
 
-##### Giulia
+#### Giulia
