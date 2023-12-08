@@ -46,6 +46,7 @@ Um uns das Fehler beheben einfacher zu machen, erstellten wir einen Loop in unse
 
 <img width="500" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/207800cf-08f4-4fdb-9569-fe367c2f7d12">
 
+## Arbeitsaufteilung
 
 
 # Entscheiden
@@ -96,5 +97,10 @@ Wir fingen zu erst mit dem bearbeiten von unseren Automaten an, sodass dieser au
 # Kontrollieren
 
 Wir haben unser Code mehr oder weniger fertiggestellt und kontrolliert, wobei uns ein paar Fehler aufgefallen sind die wir noch beheben müssen. Was noch ein Problem ist, ist das wenn man ein Objekt kauft und dann nochmals eins Kaufen möchte dies noch nicht so ganz funktioniert wie wir uns das vorgestellt haben. Ein weiters noch bestehendes Problem ist der secret key. Es funktionieren noch nicht alle funktionen im secret key wie sie Funktionieren sollten. Es gibt aber auch noch sehr kleine Probleme die im Code noch behoben werden müssen.
+
+## Bugs
+- SecretKey Function
+- Wiederholung der Kauffunktion 
+- Zweimal Enter drücken nach einer Eingabe
 
 # Auswerten
