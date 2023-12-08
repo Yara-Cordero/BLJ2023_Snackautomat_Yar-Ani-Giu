@@ -10,8 +10,6 @@ Wir haben uns zuerst das Aufgabenblatt gründlich durchgelesen, um uns ein Bild 
 - Hilfe von Berufsbildnern
 - Teams für Kommunikation
 
-<br>
-
 # Planen
 Wir haben uns aufgezeichnet wie unser Snack Automat aussehen soll und aufgeschrieben was für Funktionen enthalten sein müssen. Dann haben wir uns zwölf Items die wir zuvor aufgeschrieben haben ausgewählt, die wir gerne in unserem Automaten haben möchten. Wir haben auch noch Vier Items dazu ausgesucht die wir mit einem bereits bestehnedem Item ersetzen können und zwar mit dem sogenannten Secret Key.
 
@@ -23,31 +21,26 @@ Wir planten auch die Grösse unseres Automate und wie viele Items in den Snackau
 <img width="200" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/8b251528-2be7-456a-a6b9-faf853a2666f">
 
 <br><br>
-
 Um unser Vorhaben in die Tat umsetzen zu können, haben wir uns als Hilfestellung ein Activity Diagramm erstellt. Wobei wir hier einen kleinen Fehler gemacht haben und zwar das man kein Geld einwerfen kann und wenn zu wenig Geld vorhanden ist, dass das Geld nicht wieder zurückerstattet wird.
 
 <img width="800" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/722557bb-85a5-412c-95cb-20852ffa2585">
 
 <br><br>
-
 Hier ist das verbessetrte Activity Diagramm. Es macht nur Sinn das der User entweder genug Geld hat oder nicht.
 
 <img width="800" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/c06d93ed-f533-464b-85ef-c8fcdd857a15">
 
 <br><br>
-
 Wir haben uns hier eine Liste erstellt wo jedes Gruppenmitglied abhacken kann, was im File Machine schon erledigt ist, so dass alle aus der Gruppe auf dem neusten Stand sind, da alle Mitglieder mehrheitlich in diesem File arbeiten müssen.
 
 <img width="600" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/6ba2a7ee-5393-4f65-8eca-aa46b0b74631">
 
 <br><br>
-
 Um uns das Fehler beheben einfacher zu machen, erstellten wir einen Loop in unsere Teams Gruppe, um dort umgehende Probleme aufzufassen.
 
 <img width="500" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566014/207800cf-08f4-4fdb-9569-fe367c2f7d12">
 
 ## Arbeitsaufteilung
-
 
 # Entscheiden
 
@@ -68,9 +61,7 @@ Beim Realisieren hatten wir uns auch entschieden, dass wenn du den secret Key ha
 # Realisieren
 
 Das erste das wir beim Realisieren angingen war, dass wir unser GitHub Repo erstellten. Danach hatten wir die Repo auf 
-unsere Laptops gecloned. 
-
-Wir erstellten unsere verschieden Files.
+unsere Laptops gecloned und erstellten unsere verschiedenen Files:
 
 ## Main.java
 Hier wird nur die start Funktion aufgerufen in der alle Funktionen bereits zu einem Programm zusammenhefügt wurden. 
@@ -91,8 +82,19 @@ Für den Benutzer ohne den Secret Key sind jedoch nur die Produkte käuflich die
   
 ### secretKey();
 #### restock();
+Als wir begannen an der Restock Funktion zu arbeiten, haben wir uns dazu entschieden dass wir als Standard von allen Produkten 10 Stücke haben. In der Restock Funktion kann man dann entscheiden ob man das Produkt wieder auf 10 auffüllt oder für besonders beliebte Produkte kann man die Anzahl auch auf das Maximum von 15 setzen. 
+
+Wir haben es auch so gemacht dass es die fehlenden Anzahl Stücke berechnet und nur diese dann dazufügt. Wir haben uns dazu entschieden da es ja ein Automat ist und mann beim Auffüllen nicht alle Artikel ersetzen will sondern nur auffüllen möchte. 
+Beim auffüllen auf 10 überprüft das Programm ebenfalls ob schon 10 Stücke vorhanden sind oder nicht. 
+
+<img width="500" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566901/595be87f-739e-4920-8fb7-11915dc37695">
+
+
 #### changePrice();
 #### replaceItem();
+Da wir bei der Replace Item Funktion hatten das Item zu addressieren entschieden wir uns dazu die Produkte nach Position zu benennen. Somit konnten wir einfach die Daten miteinander wechseln mit einer Temporärer Variable um keiner der Items zu verlieren. 
+
+<img width="500" alt="image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145566901/ef0b0dc1-f59b-468a-975c-abb070ab05d7">
 
 ## Item.java
 Hier haben wir die 
