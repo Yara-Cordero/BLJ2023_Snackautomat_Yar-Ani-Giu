@@ -91,6 +91,11 @@ Beim auffüllen auf 10 überprüft das Programm ebenfalls ob schon 10 Stücke vo
 
 
 #### changePrice();
+
+Bei der Funktion "change price" kann der User von einem beliebigen Produkt, dass im Automaten enthalten ist der Preis ändern. Nachdem der User den neuen Preis eingegeben hat zeigt es in der Konsole an, was der neue Preis des Produkts ist. Wir haben hier mit den Positionsnamen (A1) der Produkte gearbeitet die am Automaten angeschrieben sind  und nicht mit den Produknamen (Maltesers) selber.
+
+<img width = "500" alt= "image" src="https://github.com/Yara-Cordero/BLJ2023_Snackautomat_Yar-Ani-Giu/assets/145564994/93292a09-ec7d-4000-af7e-36717dfb4117">
+
 #### replaceItem();
 Da wir bei der Replace Item Funktion hatten das Item zu addressieren entschieden wir uns dazu die Produkte nach Position zu benennen. Somit konnten wir einfach die Daten miteinander wechseln mit einer Temporärer Variable um keiner der Items zu verlieren. 
 
