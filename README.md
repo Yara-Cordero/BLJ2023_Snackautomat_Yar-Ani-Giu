@@ -1,7 +1,7 @@
 # BLJ2023_Snackautomat_Yar-Ani-Giu
 
 # IPERKA System
-- Informieren
+- Informieren[Informieren](IPERKA.md#informieren)
 - Plannen
 - Entscheiden
 - Realisieren
